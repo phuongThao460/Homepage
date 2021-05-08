@@ -3872,11 +3872,9 @@
     <Content Include="Views\Shared\_MainMenu.cshtml" />
     <Content Include="Views\ShoppingCart\BagCart.cshtml" />
     <Content Include="Views\ShoppingCart\ShowCart.cshtml" />
-    <Content Include="Views\ChiTietSanPham\Index.cshtml" />
     <Content Include="Views\Shared\_Book.cshtml" />
     <Content Include="Views\Shared\_Carousel.cshtml" />
     <Content Include="Views\Shared\_UserMenu.cshtml" />
-    <Content Include="Views\ChiTietSanPham\Details.cshtml" />
     <Content Include="Views\uHome\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
