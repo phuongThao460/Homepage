@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BookshopModelStoreContainer" CdmEntityContainer="BookshopEntity">
+    <EntitySetMapping Name="SACHes">
+      <EntityTypeMapping TypeName="BookshopModel.SACH">
+        <MappingFragment StoreEntitySet="SACH">
+          <ScalarProperty Name="ID_SACH" ColumnName="ID_SACH" />
+          <ScalarProperty Name="TEN_SACH" ColumnName="TEN_SACH" />
+          <ScalarProperty Name="LOAI_BIA" ColumnName="LOAI_BIA" />
+          <ScalarProperty Name="NGAY_XUATBAN" ColumnName="NGAY_XUATBAN" />
+          <ScalarProperty Name="SOLUONG_TON" ColumnName="SOLUONG_TON" />
+          <ScalarProperty Name="SO_TRANG" ColumnName="SO_TRANG" />
+          <ScalarProperty Name="KICH_THUOC" ColumnName="KICH_THUOC" />
+          <ScalarProperty Name="MOTA" ColumnName="MOTA" />
+          <ScalarProperty Name="ID_BANGGIA" ColumnName="ID_BANGGIA" />
+          <ScalarProperty Name="ID_NXB" ColumnName="ID_NXB" />
+          <ScalarProperty Name="ID_TACGIA" ColumnName="ID_TACGIA" />
+          <ScalarProperty Name="ID_NCC" ColumnName="ID_NCC" />
+          <ScalarProperty Name="ID_THELOAI" ColumnName="ID_THELOAI" />
+          <ScalarProperty Name="KHOILUONG" ColumnName="KHOILUONG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

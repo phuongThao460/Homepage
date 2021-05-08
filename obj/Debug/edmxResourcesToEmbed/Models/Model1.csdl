@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BOOKSHOPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="SACH">
+    <Key>
+      <PropertyRef Name="ID_S" />
+    </Key>
+    <Property Name="ID_S" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ID_NXB" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="ID_TG" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="ID_TL" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Ten" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BiaSach" Type="String" />
+    <Property Name="Ngay_XuatBan" Type="DateTime" Precision="0" />
+    <Property Name="KichThuoc" Type="Double" />
+    <Property Name="SoTrang" Type="Int32" />
+    <Property Name="TinhTrang" Type="Boolean" />
+    <Property Name="SoLuong" Type="Int32" />
+    <Property Name="GiaBia" Type="Double" />
+    <Property Name="ChiTiet" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ID_NCC" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="BOOKSHOPEntity" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="SACHes" EntityType="Self.SACH" />
+  </EntityContainer>
+</Schema>

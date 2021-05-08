@@ -1,0 +1,544 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BookshopModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ANHBIA">
+    <Key>
+      <PropertyRef Name="ID_ANH" />
+    </Key>
+    <Property Name="ID_ANH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_SACH" Type="int" />
+    <Property Name="ANH" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="ANHFEEDBACK">
+    <Key>
+      <PropertyRef Name="ID_ANH" />
+    </Key>
+    <Property Name="ID_ANH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_FEEDBACK" Type="int" />
+    <Property Name="ANH" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="BANGGIA">
+    <Key>
+      <PropertyRef Name="ID_BANGGIA" />
+    </Key>
+    <Property Name="ID_BANGGIA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GIA_NHAP" Type="float" />
+    <Property Name="GIA_BAN" Type="float" />
+    <Property Name="GIA_BIA" Type="float" />
+  </EntityType>
+  <EntityType Name="CHITIETDONHANG">
+    <Key>
+      <PropertyRef Name="ID_CTDH" />
+    </Key>
+    <Property Name="ID_CTDH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_DONHANG" Type="int" />
+    <Property Name="ID_SACH" Type="int" />
+    <Property Name="ID_BANGGIA" Type="int" />
+    <Property Name="ID_SPKM" Type="int" />
+    <Property Name="SOLUONG" Type="smallint" />
+  </EntityType>
+  <EntityType Name="DIEUKIENKHUYENMAI">
+    <Key>
+      <PropertyRef Name="ID_DIEUKIEN" />
+    </Key>
+    <Property Name="ID_DIEUKIEN" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="THOIGIAN_BATDAU" Type="datetime" />
+    <Property Name="THOIGIAN_KETTHUC" Type="datetime" />
+    <Property Name="MUC_TIEUDUNG" Type="float" />
+  </EntityType>
+  <EntityType Name="DONHANG">
+    <Key>
+      <PropertyRef Name="ID_DONHANG" />
+    </Key>
+    <Property Name="ID_DONHANG" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_TTKH" Type="int" />
+    <Property Name="ID_TRANGTHAI" Type="int" />
+    <Property Name="THOIGIAN_DAT" Type="datetime" />
+  </EntityType>
+  <EntityType Name="FEEDBACK">
+    <Key>
+      <PropertyRef Name="ID_FEEDBACK" />
+    </Key>
+    <Property Name="ID_FEEDBACK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_SACH" Type="int" />
+    <Property Name="XACNHAN_MUAHANG" Type="bit" />
+    <Property Name="DIEM_DANHGIA" Type="tinyint" />
+    <Property Name="THOIGIAN_DANG" Type="datetime" />
+    <Property Name="NOIDUNG" Type="text" />
+  </EntityType>
+  <EntityType Name="HINHANHKHUYENMAI">
+    <Key>
+      <PropertyRef Name="ID_HINHANH" />
+    </Key>
+    <Property Name="ID_HINHANH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_KHUYENMAI" Type="int" />
+    <Property Name="HINHANH" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="KHUYENMAI">
+    <Key>
+      <PropertyRef Name="ID_KHUYENMAI" />
+    </Key>
+    <Property Name="ID_KHUYENMAI" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_LOAITK" Type="int" />
+    <Property Name="ID_DIEUKIEN" Type="int" />
+    <Property Name="TEN_KHUYENMAI" Type="nvarchar" MaxLength="255" />
+    <Property Name="THOIGIAN_BATDAU" Type="datetime" />
+    <Property Name="THOIGIAN_KETTHUC" Type="datetime" />
+  </EntityType>
+  <EntityType Name="LOAITAIKHOAN">
+    <Key>
+      <PropertyRef Name="ID_LOAITK" />
+    </Key>
+    <Property Name="ID_LOAITK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TEN_LOAITK" Type="nvarchar" MaxLength="255" />
+    <Property Name="MUC_DATDUOC" Type="float" />
+  </EntityType>
+  <EntityType Name="NHACUNGCAP">
+    <Key>
+      <PropertyRef Name="ID_NCC" />
+    </Key>
+    <Property Name="ID_NCC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TEN_NHACUNGCAP" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="NHAXUATBAN">
+    <Key>
+      <PropertyRef Name="ID_NXB" />
+    </Key>
+    <Property Name="ID_NXB" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TEN_NHAXUATBAN" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="SACH">
+    <Key>
+      <PropertyRef Name="ID_SACH" />
+    </Key>
+    <Property Name="ID_SACH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TEN_SACH" Type="nvarchar" MaxLength="255" />
+    <Property Name="LOAI_BIA" Type="nvarchar" MaxLength="100" />
+    <Property Name="NGAY_XUATBAN" Type="date" />
+    <Property Name="SOLUONG_TON" Type="smallint" />
+    <Property Name="SO_TRANG" Type="smallint" />
+    <Property Name="KICH_THUOC" Type="varchar" MaxLength="20" />
+    <Property Name="MOTA" Type="text" />
+    <Property Name="ID_NXB" Type="int" />
+    <Property Name="ID_TACGIA" Type="int" />
+    <Property Name="ID_NCC" Type="int" />
+    <Property Name="ID_THELOAI" Type="int" />
+    <Property Name="KHOILUONG" Type="float" />
+    <Property Name="ID_BANGGIA" Type="int" />
+  </EntityType>
+  <EntityType Name="SANPHAMKHUYENMAI">
+    <Key>
+      <PropertyRef Name="ID_SPKM" />
+    </Key>
+    <Property Name="ID_SPKM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_SACH" Type="int" />
+    <Property Name="ID_BANGGIA" Type="int" />
+    <Property Name="GIA_GOC" Type="float" />
+    <Property Name="GIA_BAN" Type="float" />
+    <Property Name="SOLUONG" Type="smallint" />
+    <Property Name="ID_KHUYENMAI" Type="int" />
+  </EntityType>
+  <EntityType Name="TACGIA">
+    <Key>
+      <PropertyRef Name="ID_TACGIA" />
+    </Key>
+    <Property Name="ID_TACGIA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TEN_TACGIA" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="TAIKHOANKHACHHANG">
+    <Key>
+      <PropertyRef Name="ID_KHACHHANG" />
+    </Key>
+    <Property Name="ID_KHACHHANG" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TEN_DANGNHAP" Type="nvarchar" MaxLength="100" />
+    <Property Name="MATKHAU" Type="nvarchar" MaxLength="100" />
+    <Property Name="ANH_DAIDIEN" Type="image" />
+    <Property Name="ID_LOAITK" Type="int" />
+    <Property Name="ID_TTKH" Type="int" />
+  </EntityType>
+  <EntityType Name="TAIKHOANNGANHANG">
+    <Key>
+      <PropertyRef Name="ID_TKNH" />
+    </Key>
+    <Property Name="ID_TKNH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TEN_NGANHANG" Type="nvarchar" MaxLength="200" />
+    <Property Name="MA_BIN" Type="int" />
+  </EntityType>
+  <EntityType Name="TAIKHOANQUANTRIVIEN">
+    <Key>
+      <PropertyRef Name="ID_QUANTRIVIEN" />
+    </Key>
+    <Property Name="ID_QUANTRIVIEN" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TEN_DANGNHAP" Type="nvarchar" MaxLength="100" />
+    <Property Name="MATKHAU" Type="nvarchar" MaxLength="100" />
+    <Property Name="TEN_QUANTRIVIEN" Type="nvarchar" MaxLength="255" />
+    <Property Name="ANH_DAIDIEN" Type="image" />
+  </EntityType>
+  <EntityType Name="THELOAI">
+    <Key>
+      <PropertyRef Name="ID_THELOAI" />
+    </Key>
+    <Property Name="ID_THELOAI" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TEN_THELOAI" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="THONGTINKHACHHANG">
+    <Key>
+      <PropertyRef Name="ID_TTKH" />
+    </Key>
+    <Property Name="ID_TTKH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TEN_KHACHHANG" Type="nvarchar" MaxLength="255" />
+    <Property Name="EMAIL_KHACHHANG" Type="nvarchar" MaxLength="255" />
+    <Property Name="DIACHI" Type="text" />
+    <Property Name="SO_DIENTHOAI" Type="nchar" MaxLength="20" />
+    <Property Name="TONG_TIEUDUNG" Type="float" />
+  </EntityType>
+  <EntityType Name="TRANGTHAIDONHANG">
+    <Key>
+      <PropertyRef Name="ID_TRANGTHAI" />
+    </Key>
+    <Property Name="ID_TRANGTHAI" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TEN_TRANGTHAI" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <Association Name="FK_ANHBIA_SACH">
+    <End Role="SACH" Type="Self.SACH" Multiplicity="0..1" />
+    <End Role="ANHBIA" Type="Self.ANHBIA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SACH">
+        <PropertyRef Name="ID_SACH" />
+      </Principal>
+      <Dependent Role="ANHBIA">
+        <PropertyRef Name="ID_SACH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ANHFEED_FEEDBACK">
+    <End Role="FEEDBACK" Type="Self.FEEDBACK" Multiplicity="0..1" />
+    <End Role="ANHFEEDBACK" Type="Self.ANHFEEDBACK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FEEDBACK">
+        <PropertyRef Name="ID_FEEDBACK" />
+      </Principal>
+      <Dependent Role="ANHFEEDBACK">
+        <PropertyRef Name="ID_FEEDBACK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CHITIETDONHANG_BANGGIA">
+    <End Role="BANGGIA" Type="Self.BANGGIA" Multiplicity="0..1" />
+    <End Role="CHITIETDONHANG" Type="Self.CHITIETDONHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BANGGIA">
+        <PropertyRef Name="ID_BANGGIA" />
+      </Principal>
+      <Dependent Role="CHITIETDONHANG">
+        <PropertyRef Name="ID_BANGGIA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTDH_DONHANG">
+    <End Role="DONHANG" Type="Self.DONHANG" Multiplicity="0..1" />
+    <End Role="CHITIETDONHANG" Type="Self.CHITIETDONHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DONHANG">
+        <PropertyRef Name="ID_DONHANG" />
+      </Principal>
+      <Dependent Role="CHITIETDONHANG">
+        <PropertyRef Name="ID_DONHANG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTDH_SACH">
+    <End Role="SACH" Type="Self.SACH" Multiplicity="0..1" />
+    <End Role="CHITIETDONHANG" Type="Self.CHITIETDONHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SACH">
+        <PropertyRef Name="ID_SACH" />
+      </Principal>
+      <Dependent Role="CHITIETDONHANG">
+        <PropertyRef Name="ID_SACH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTDH_SANPHAMKHUYENMAI">
+    <End Role="SANPHAMKHUYENMAI" Type="Self.SANPHAMKHUYENMAI" Multiplicity="0..1" />
+    <End Role="CHITIETDONHANG" Type="Self.CHITIETDONHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SANPHAMKHUYENMAI">
+        <PropertyRef Name="ID_SPKM" />
+      </Principal>
+      <Dependent Role="CHITIETDONHANG">
+        <PropertyRef Name="ID_SPKM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DONHANG_TRANGTHAI">
+    <End Role="TRANGTHAIDONHANG" Type="Self.TRANGTHAIDONHANG" Multiplicity="0..1" />
+    <End Role="DONHANG" Type="Self.DONHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TRANGTHAIDONHANG">
+        <PropertyRef Name="ID_TRANGTHAI" />
+      </Principal>
+      <Dependent Role="DONHANG">
+        <PropertyRef Name="ID_TRANGTHAI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DONHANG_TTKH">
+    <End Role="THONGTINKHACHHANG" Type="Self.THONGTINKHACHHANG" Multiplicity="0..1" />
+    <End Role="DONHANG" Type="Self.DONHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="THONGTINKHACHHANG">
+        <PropertyRef Name="ID_TTKH" />
+      </Principal>
+      <Dependent Role="DONHANG">
+        <PropertyRef Name="ID_TTKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FEEDBACK_SACH">
+    <End Role="SACH" Type="Self.SACH" Multiplicity="0..1" />
+    <End Role="FEEDBACK" Type="Self.FEEDBACK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SACH">
+        <PropertyRef Name="ID_SACH" />
+      </Principal>
+      <Dependent Role="FEEDBACK">
+        <PropertyRef Name="ID_SACH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HINHANH_KHUYENMAI">
+    <End Role="KHUYENMAI" Type="Self.KHUYENMAI" Multiplicity="0..1" />
+    <End Role="HINHANHKHUYENMAI" Type="Self.HINHANHKHUYENMAI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHUYENMAI">
+        <PropertyRef Name="ID_KHUYENMAI" />
+      </Principal>
+      <Dependent Role="HINHANHKHUYENMAI">
+        <PropertyRef Name="ID_KHUYENMAI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KHUYENMAI_DIEUKIEN">
+    <End Role="DIEUKIENKHUYENMAI" Type="Self.DIEUKIENKHUYENMAI" Multiplicity="0..1" />
+    <End Role="KHUYENMAI" Type="Self.KHUYENMAI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DIEUKIENKHUYENMAI">
+        <PropertyRef Name="ID_DIEUKIEN" />
+      </Principal>
+      <Dependent Role="KHUYENMAI">
+        <PropertyRef Name="ID_DIEUKIEN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KHUYENMAI_LOAITK">
+    <End Role="LOAITAIKHOAN" Type="Self.LOAITAIKHOAN" Multiplicity="0..1" />
+    <End Role="KHUYENMAI" Type="Self.KHUYENMAI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAITAIKHOAN">
+        <PropertyRef Name="ID_LOAITK" />
+      </Principal>
+      <Dependent Role="KHUYENMAI">
+        <PropertyRef Name="ID_LOAITK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SACH_BANGGIA">
+    <End Role="BANGGIA" Type="Self.BANGGIA" Multiplicity="0..1" />
+    <End Role="SACH" Type="Self.SACH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BANGGIA">
+        <PropertyRef Name="ID_BANGGIA" />
+      </Principal>
+      <Dependent Role="SACH">
+        <PropertyRef Name="ID_BANGGIA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SACH_NCC">
+    <End Role="NHACUNGCAP" Type="Self.NHACUNGCAP" Multiplicity="0..1" />
+    <End Role="SACH" Type="Self.SACH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHACUNGCAP">
+        <PropertyRef Name="ID_NCC" />
+      </Principal>
+      <Dependent Role="SACH">
+        <PropertyRef Name="ID_NCC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SACH_NXB">
+    <End Role="NHAXUATBAN" Type="Self.NHAXUATBAN" Multiplicity="0..1" />
+    <End Role="SACH" Type="Self.SACH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHAXUATBAN">
+        <PropertyRef Name="ID_NXB" />
+      </Principal>
+      <Dependent Role="SACH">
+        <PropertyRef Name="ID_NXB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SACH_TACGIA">
+    <End Role="TACGIA" Type="Self.TACGIA" Multiplicity="0..1" />
+    <End Role="SACH" Type="Self.SACH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TACGIA">
+        <PropertyRef Name="ID_TACGIA" />
+      </Principal>
+      <Dependent Role="SACH">
+        <PropertyRef Name="ID_TACGIA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SACH_THELOAI">
+    <End Role="THELOAI" Type="Self.THELOAI" Multiplicity="0..1" />
+    <End Role="SACH" Type="Self.SACH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="THELOAI">
+        <PropertyRef Name="ID_THELOAI" />
+      </Principal>
+      <Dependent Role="SACH">
+        <PropertyRef Name="ID_THELOAI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SANPHAMKM_KHUYENMAI">
+    <End Role="KHUYENMAI" Type="Self.KHUYENMAI" Multiplicity="0..1" />
+    <End Role="SANPHAMKHUYENMAI" Type="Self.SANPHAMKHUYENMAI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHUYENMAI">
+        <PropertyRef Name="ID_KHUYENMAI" />
+      </Principal>
+      <Dependent Role="SANPHAMKHUYENMAI">
+        <PropertyRef Name="ID_KHUYENMAI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TKKH_LOAITK">
+    <End Role="LOAITAIKHOAN" Type="Self.LOAITAIKHOAN" Multiplicity="0..1" />
+    <End Role="TAIKHOANKHACHHANG" Type="Self.TAIKHOANKHACHHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAITAIKHOAN">
+        <PropertyRef Name="ID_LOAITK" />
+      </Principal>
+      <Dependent Role="TAIKHOANKHACHHANG">
+        <PropertyRef Name="ID_LOAITK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TKKH_TTKH">
+    <End Role="THONGTINKHACHHANG" Type="Self.THONGTINKHACHHANG" Multiplicity="0..1" />
+    <End Role="TAIKHOANKHACHHANG" Type="Self.TAIKHOANKHACHHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="THONGTINKHACHHANG">
+        <PropertyRef Name="ID_TTKH" />
+      </Principal>
+      <Dependent Role="TAIKHOANKHACHHANG">
+        <PropertyRef Name="ID_TTKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BookshopModelStoreContainer">
+    <EntitySet Name="ANHBIA" EntityType="Self.ANHBIA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ANHFEEDBACK" EntityType="Self.ANHFEEDBACK" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BANGGIA" EntityType="Self.BANGGIA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CHITIETDONHANG" EntityType="Self.CHITIETDONHANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DIEUKIENKHUYENMAI" EntityType="Self.DIEUKIENKHUYENMAI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DONHANG" EntityType="Self.DONHANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FEEDBACK" EntityType="Self.FEEDBACK" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HINHANHKHUYENMAI" EntityType="Self.HINHANHKHUYENMAI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KHUYENMAI" EntityType="Self.KHUYENMAI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LOAITAIKHOAN" EntityType="Self.LOAITAIKHOAN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NHACUNGCAP" EntityType="Self.NHACUNGCAP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NHAXUATBAN" EntityType="Self.NHAXUATBAN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SACH" EntityType="Self.SACH" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SANPHAMKHUYENMAI" EntityType="Self.SANPHAMKHUYENMAI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TACGIA" EntityType="Self.TACGIA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TAIKHOANKHACHHANG" EntityType="Self.TAIKHOANKHACHHANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TAIKHOANNGANHANG" EntityType="Self.TAIKHOANNGANHANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TAIKHOANQUANTRIVIEN" EntityType="Self.TAIKHOANQUANTRIVIEN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="THELOAI" EntityType="Self.THELOAI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="THONGTINKHACHHANG" EntityType="Self.THONGTINKHACHHANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TRANGTHAIDONHANG" EntityType="Self.TRANGTHAIDONHANG" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ANHBIA_SACH" Association="Self.FK_ANHBIA_SACH">
+      <End Role="SACH" EntitySet="SACH" />
+      <End Role="ANHBIA" EntitySet="ANHBIA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ANHFEED_FEEDBACK" Association="Self.FK_ANHFEED_FEEDBACK">
+      <End Role="FEEDBACK" EntitySet="FEEDBACK" />
+      <End Role="ANHFEEDBACK" EntitySet="ANHFEEDBACK" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CHITIETDONHANG_BANGGIA" Association="Self.FK_CHITIETDONHANG_BANGGIA">
+      <End Role="BANGGIA" EntitySet="BANGGIA" />
+      <End Role="CHITIETDONHANG" EntitySet="CHITIETDONHANG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTDH_DONHANG" Association="Self.FK_CTDH_DONHANG">
+      <End Role="DONHANG" EntitySet="DONHANG" />
+      <End Role="CHITIETDONHANG" EntitySet="CHITIETDONHANG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTDH_SACH" Association="Self.FK_CTDH_SACH">
+      <End Role="SACH" EntitySet="SACH" />
+      <End Role="CHITIETDONHANG" EntitySet="CHITIETDONHANG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTDH_SANPHAMKHUYENMAI" Association="Self.FK_CTDH_SANPHAMKHUYENMAI">
+      <End Role="SANPHAMKHUYENMAI" EntitySet="SANPHAMKHUYENMAI" />
+      <End Role="CHITIETDONHANG" EntitySet="CHITIETDONHANG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DONHANG_TRANGTHAI" Association="Self.FK_DONHANG_TRANGTHAI">
+      <End Role="TRANGTHAIDONHANG" EntitySet="TRANGTHAIDONHANG" />
+      <End Role="DONHANG" EntitySet="DONHANG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DONHANG_TTKH" Association="Self.FK_DONHANG_TTKH">
+      <End Role="THONGTINKHACHHANG" EntitySet="THONGTINKHACHHANG" />
+      <End Role="DONHANG" EntitySet="DONHANG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FEEDBACK_SACH" Association="Self.FK_FEEDBACK_SACH">
+      <End Role="SACH" EntitySet="SACH" />
+      <End Role="FEEDBACK" EntitySet="FEEDBACK" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HINHANH_KHUYENMAI" Association="Self.FK_HINHANH_KHUYENMAI">
+      <End Role="KHUYENMAI" EntitySet="KHUYENMAI" />
+      <End Role="HINHANHKHUYENMAI" EntitySet="HINHANHKHUYENMAI" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KHUYENMAI_DIEUKIEN" Association="Self.FK_KHUYENMAI_DIEUKIEN">
+      <End Role="DIEUKIENKHUYENMAI" EntitySet="DIEUKIENKHUYENMAI" />
+      <End Role="KHUYENMAI" EntitySet="KHUYENMAI" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KHUYENMAI_LOAITK" Association="Self.FK_KHUYENMAI_LOAITK">
+      <End Role="LOAITAIKHOAN" EntitySet="LOAITAIKHOAN" />
+      <End Role="KHUYENMAI" EntitySet="KHUYENMAI" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SACH_BANGGIA" Association="Self.FK_SACH_BANGGIA">
+      <End Role="BANGGIA" EntitySet="BANGGIA" />
+      <End Role="SACH" EntitySet="SACH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SACH_NCC" Association="Self.FK_SACH_NCC">
+      <End Role="NHACUNGCAP" EntitySet="NHACUNGCAP" />
+      <End Role="SACH" EntitySet="SACH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SACH_NXB" Association="Self.FK_SACH_NXB">
+      <End Role="NHAXUATBAN" EntitySet="NHAXUATBAN" />
+      <End Role="SACH" EntitySet="SACH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SACH_TACGIA" Association="Self.FK_SACH_TACGIA">
+      <End Role="TACGIA" EntitySet="TACGIA" />
+      <End Role="SACH" EntitySet="SACH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SACH_THELOAI" Association="Self.FK_SACH_THELOAI">
+      <End Role="THELOAI" EntitySet="THELOAI" />
+      <End Role="SACH" EntitySet="SACH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SANPHAMKM_KHUYENMAI" Association="Self.FK_SANPHAMKM_KHUYENMAI">
+      <End Role="KHUYENMAI" EntitySet="KHUYENMAI" />
+      <End Role="SANPHAMKHUYENMAI" EntitySet="SANPHAMKHUYENMAI" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TKKH_LOAITK" Association="Self.FK_TKKH_LOAITK">
+      <End Role="LOAITAIKHOAN" EntitySet="LOAITAIKHOAN" />
+      <End Role="TAIKHOANKHACHHANG" EntitySet="TAIKHOANKHACHHANG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TKKH_TTKH" Association="Self.FK_TKKH_TTKH">
+      <End Role="THONGTINKHACHHANG" EntitySet="THONGTINKHACHHANG" />
+      <End Role="TAIKHOANKHACHHANG" EntitySet="TAIKHOANKHACHHANG" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

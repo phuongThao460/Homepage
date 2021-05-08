@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BOOKSHOPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="SACH">
+    <Key>
+      <PropertyRef Name="ID_S" />
+    </Key>
+    <Property Name="ID_S" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="ID_NXB" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="ID_TG" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="ID_TL" Type="nchar" MaxLength="10" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="100" />
+    <Property Name="BiaSach" Type="image" />
+    <Property Name="Ngay_XuatBan" Type="date" />
+    <Property Name="KichThuoc" Type="float" />
+    <Property Name="SoTrang" Type="int" />
+    <Property Name="TinhTrang" Type="bit" />
+    <Property Name="SoLuong" Type="int" />
+    <Property Name="GiaBia" Type="float" />
+    <Property Name="ChiTiet" Type="nvarchar" MaxLength="200" />
+    <Property Name="ID_NCC" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="BOOKSHOPModelStoreContainer">
+    <EntitySet Name="SACH" EntityType="Self.SACH" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
