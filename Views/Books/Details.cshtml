@@ -116,18 +116,25 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ID_BANGGIA)
+            @Html.DisplayNameFor(model => model.GIA_BIA)
         </dt>
-        <dt>
-            @foreach (var image in Model.ANHBIAs)
-            {
 
-    <img src="@Url.Content(image.ANH)" width="100" height="100" />}
-        <dt />
         <dd>
-            @Html.DisplayFor(model => model.ID_BANGGIA)
+            @Html.DisplayFor(model => model.GIA_BIA)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.GIA_BAN)
+        </dt>
 
+        <dd>
+            @Html.DisplayFor(model => model.GIA_BAN)
+        </dd>
+        @foreach (var image in Model.ANHBIAs)
+        {
+            <td>
+                <img src="@Url.Content(image.ANH)" width="100" height="100" />
+            </td>
+        }
     </dl>
 </div>
 <p>
