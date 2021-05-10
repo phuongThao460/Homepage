@@ -3882,6 +3882,9 @@
     <Content Include="Views\Shared\_Carousel.cshtml" />
     <Content Include="Views\Shared\_UserMenu.cshtml" />
     <Content Include="Views\uHome\Details.cshtml" />
+    <Content Include="Views\NhaCungCap\Details.cshtml" />
+    <Content Include="Views\NhaXuatBan\Details.cshtml" />
+    <Content Include="Views\TheLoai\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

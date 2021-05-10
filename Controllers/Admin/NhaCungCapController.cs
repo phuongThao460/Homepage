@@ -19,7 +19,8 @@ namespace Homepage.Controllers
         // GET: NhaCungCap/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var check = db.NHACUNGCAPs.Where(ncc => ncc.ID_NCC == id).FirstOrDefault();
+            return View(check);
         }
 
         // GET: NhaCungCap/Create
@@ -47,16 +48,17 @@ namespace Homepage.Controllers
         // GET: NhaCungCap/Edit/5
         public ActionResult Edit(int id)
         {
-            return View(db.NHACUNGCAPs.Where(s => s.ID_NCC == id).First());
+            return View(db.NHACUNGCAPs.Where(s => s.ID_NCC == id).FirstOrDefault());
         }
 
         // POST: NhaCungCap/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, NHACUNGCAP ncc)
+        public ActionResult Edit(NHACUNGCAP ncc)
         {
+            int id = int.Parse(Url.RequestContext.RouteData.Values["id"].ToString());
             try
             {
-                NHACUNGCAP d = db.NHACUNGCAPs.Where(s => s.ID_NCC == ncc.ID_NCC).First();
+                NHACUNGCAP d = db.NHACUNGCAPs.Where(s => s.ID_NCC == id).FirstOrDefault();
                 d.TEN_NHACUNGCAP = ncc.TEN_NHACUNGCAP;
                 db.SaveChanges();
                 return RedirectToAction("Index", "NhaXuatBan");
@@ -67,26 +69,5 @@ namespace Homepage.Controllers
             }
         }
 
-        // GET: NhaCungCap/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: NhaCungCap/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }

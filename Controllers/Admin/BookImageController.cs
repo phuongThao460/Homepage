@@ -22,6 +22,7 @@ namespace Homepage.Controllers
             ViewBag.Id = url;
             return View(list);
         }
+
         [HttpGet]
         public ActionResult UploadImages()
         {

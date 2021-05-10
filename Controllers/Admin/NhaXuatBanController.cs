@@ -19,7 +19,7 @@ namespace Homepage.Controllers
         // GET: NhaXuatBan/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            return View(db.NHAXUATBANs.Where(nxb => nxb.ID_NXB == id).FirstOrDefault());
         }
 
         // GET: NhaXuatBan/Create
@@ -45,18 +45,19 @@ namespace Homepage.Controllers
         }
 
         // GET: NhaXuatBan/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int id)
         {
-            return View(db.NHAXUATBANs.Where(s => s.ID_NXB == id).First());
+            return View(db.NHAXUATBANs.Where(s => s.ID_NXB == id).FirstOrDefault());
         }
 
         // POST: NhaXuatBan/Edit/5
         [HttpPost]
         public ActionResult Edit(NHAXUATBAN nxb)
         {
+            int id = int.Parse(Url.RequestContext.RouteData.Values["id"].ToString());
             try
             {
-                NHAXUATBAN d = db.NHAXUATBANs.Where(s => s.ID_NXB == nxb.ID_NXB).First();
+                NHAXUATBAN d = db.NHAXUATBANs.Where(s => s.ID_NXB == id).FirstOrDefault();
                 d.TEN_NHAXUATBAN = nxb.TEN_NHAXUATBAN;
                 db.SaveChanges();
                 return RedirectToAction("Index", "NhaXuatBan");
@@ -67,26 +68,5 @@ namespace Homepage.Controllers
             }
         }
 
-        // GET: NhaXuatBan/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: NhaXuatBan/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }

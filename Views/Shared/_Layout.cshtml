@@ -25,6 +25,12 @@
         <!-- Main Header -->
         <header class="main-header">
             <!-- Logo -->
+            <a href="index2.html" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><b>AP</b>T</span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg"><b>BOOK</b>Shop</span>
+            </a>
             <!-- Header Navbar -->
             <nav class="navbar navbar-static-top" role="navigation">
                 <!-- Sidebar toggle button-->
@@ -68,7 +74,7 @@
                                         <a href="#" class="btn btn-default btn-flat">Profile</a>
                                     </div>
                                     <div class="pull-right">
-                                        <a class="btn btn-default btn-flat">@Html.ActionLink("Đăng xuất","Logout","Login")</a>
+                                        <a class="btn btn-default btn-flat">@Html.ActionLink("Đăng xuất", "Logout", "Login")</a>
                                         <!-- ----------------------------------------------------- -->
                                     </div>
                                 </li>
@@ -93,17 +99,6 @@
                         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                     </div>
                 </div>
-                <!-- search form (Optional) -->
-                <form action="#" method="get" class="sidebar-form">
-                    <div class="input-group">
-                        <input type="text" name="q" class="form-control" placeholder="Search...">
-                        <span class="input-group-btn">
-                            <button type="submit" name="search" id="search-btn" class="btn btn-flat">
-                                <i class="fa fa-search"></i>
-                            </button>
-                        </span>
-                    </div>
-                </form>
                 <!-- /.search form -->
                 <!-- Sidebar Menu -->
                 @Html.Partial("_MainMenu")
@@ -117,6 +112,12 @@
             @RenderBody()
             <!-- /.content -->
         </div>
+        <!-- /.content-wrapper -->
+        <!-- Main Footer -->
+        <footer class="main-footer">
+            <!-- Default to the left -->
+            <strong>Copyright &copy; 2018 <a href="https://codinginfinite.com">CodingInfinite</a>.</strong> All rights reserved.
+        </footer>
     </div>
     <!-- ./wrapper -->
     <!-- REQUIRED JS SCRIPTS -->

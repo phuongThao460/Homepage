@@ -17,6 +17,7 @@ namespace Homepage.Models
 
     public partial class ANHBIA
     {
+        
         [Display(Name = "Mã ảnh")]
         public int ID_ANH { get; set; }
 

@@ -35,9 +35,8 @@
                 @Html.DisplayFor(modelItem => item.TEN_NHAXUATBAN)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID_NXB }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID_NXB }) |
             </td>
         </tr>
     }

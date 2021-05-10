@@ -17,9 +17,8 @@ namespace Homepage.Controllers
         }
 
         // GET: TacGia/Details/5
-        public ActionResult Details()
+        public ActionResult Details(int id)
         {
-            int id = int.Parse(Url.RequestContext.RouteData.Values["id"].ToString());
             var select = db.TACGIAs.Where(tg => tg.ID_TACGIA == id).FirstOrDefault();
 
             return View(select);
@@ -52,9 +51,8 @@ namespace Homepage.Controllers
 
         [HttpGet]
         // GET: TacGia/Edit/5
-        public ActionResult Edit()
+        public ActionResult Edit(int id)
         {
-            int id = int.Parse(Url.RequestContext.RouteData.Values["id"].ToString());
             return View(db.TACGIAs.Where(s => s.ID_TACGIA == id).FirstOrDefault());
         }
 

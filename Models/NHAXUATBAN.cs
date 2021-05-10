@@ -11,7 +11,8 @@ namespace Homepage.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class NHAXUATBAN
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,8 +20,10 @@ namespace Homepage.Models
         {
             this.SACHes = new HashSet<SACH>();
         }
-    
+        [Display(Name ="Mã")]
         public int ID_NXB { get; set; }
+
+        [Display(Name ="Tên")]
         public string TEN_NHAXUATBAN { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
