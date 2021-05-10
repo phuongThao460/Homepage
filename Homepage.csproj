@@ -131,6 +131,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <Compile Include="Controllers\Admin\BookImageController.cs" />
     <Compile Include="Controllers\Admin\BooksController.cs" />
     <Compile Include="Controllers\Customer\ChiTietSanPhamController.cs" />
@@ -144,6 +145,8 @@
     <Compile Include="Controllers\Admin\TheLoaiController.cs" />
     <Compile Include="Controllers\Customer\uHomeController.cs" />
 =======
+=======
+>>>>>>> Stashed changes
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="Controllers\BookImageController.cs" />
@@ -3830,6 +3833,7 @@
     <Content Include="Content\dist\img\.DS_Store" />
     <Content Include="Content\dist\js\.DS_Store" />
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <EntityDeploy Include="Models\BookshopModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>BookshopModel.Designer.cs</LastGenOutput>
@@ -3837,6 +3841,10 @@
     <Content Include="Models\BookshopModel.edmx.diagram">
       <DependentUpon>BookshopModel.edmx</DependentUpon>
     </Content>
+=======
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\User\Views\web.config" />
+>>>>>>> Stashed changes
 =======
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\User\Views\web.config" />
