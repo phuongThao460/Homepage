@@ -22,15 +22,16 @@ namespace Homepage.Controllers
             ViewBag.Id = url;
             return View(list);
         }
+
         [HttpGet]
-        public ActionResult UploadImages()
+        public PartialViewResult UploadImages()
         {
-            return View();
+            return PartialView();
         }
         [HttpPost]
         public RedirectToRouteResult UploadImages(ANHBIA anhBia)
         {
-            url = int.Parse(Url.RequestContext.RouteData.Values["id"].ToString());
+            url = int.Parse(anhBia.ID_SACH.ToString());
             if (anhBia.ImageFile != null)
             {
                 string fileName = Path.GetFileNameWithoutExtension(anhBia.ImageFile.FileName);

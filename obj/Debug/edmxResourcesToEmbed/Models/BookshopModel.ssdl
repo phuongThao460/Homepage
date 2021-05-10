@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="BookshopModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="BOOKSHOPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="ANHBIA">
     <Key>
       <PropertyRef Name="ID_ANH" />
@@ -21,9 +21,10 @@
       <PropertyRef Name="ID_BANGGIA" />
     </Key>
     <Property Name="ID_BANGGIA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="GIA_NHAP" Type="float" />
-    <Property Name="GIA_BAN" Type="float" />
-    <Property Name="GIA_BIA" Type="float" />
+    <Property Name="ID_SACH" Type="int" />
+    <Property Name="NGAY_APDUNG" Type="varchar" MaxLength="20" />
+    <Property Name="TANG_GIAM" Type="bit" />
+    <Property Name="GIATRI" Type="float" />
   </EntityType>
   <EntityType Name="CHITIETDONHANG">
     <Key>
@@ -32,17 +33,30 @@
     <Property Name="ID_CTDH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ID_DONHANG" Type="int" />
     <Property Name="ID_SACH" Type="int" />
-    <Property Name="ID_BANGGIA" Type="int" />
     <Property Name="ID_SPKM" Type="int" />
+    <Property Name="GIA_BAN" Type="float" />
     <Property Name="SOLUONG" Type="smallint" />
+    <Property Name="TONGTIEN" Type="float" />
+  </EntityType>
+  <EntityType Name="CHITIETHOADON">
+    <Key>
+      <PropertyRef Name="ID_CTHD" />
+    </Key>
+    <Property Name="ID_CTHD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_HOADON" Type="int" />
+    <Property Name="ID_SACH" Type="int" />
+    <Property Name="ID_SPKM" Type="int" />
+    <Property Name="GIA_BAN" Type="float" />
+    <Property Name="SOLUONG" Type="smallint" />
+    <Property Name="TONGTIEN" Type="float" />
   </EntityType>
   <EntityType Name="DIEUKIENKHUYENMAI">
     <Key>
       <PropertyRef Name="ID_DIEUKIEN" />
     </Key>
     <Property Name="ID_DIEUKIEN" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="THOIGIAN_BATDAU" Type="datetime" />
-    <Property Name="THOIGIAN_KETTHUC" Type="datetime" />
+    <Property Name="THOIGIAN_BATDAU" Type="varchar" MaxLength="20" />
+    <Property Name="THOIGIAN_KETTHUC" Type="varchar" MaxLength="20" />
     <Property Name="MUC_TIEUDUNG" Type="float" />
   </EntityType>
   <EntityType Name="DONHANG">
@@ -52,7 +66,8 @@
     <Property Name="ID_DONHANG" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ID_TTKH" Type="int" />
     <Property Name="ID_TRANGTHAI" Type="int" />
-    <Property Name="THOIGIAN_DAT" Type="datetime" />
+    <Property Name="TONGTIEN" Type="float" />
+    <Property Name="THOIGIAN_DAT" Type="varchar" MaxLength="20" />
   </EntityType>
   <EntityType Name="FEEDBACK">
     <Key>
@@ -62,7 +77,7 @@
     <Property Name="ID_SACH" Type="int" />
     <Property Name="XACNHAN_MUAHANG" Type="bit" />
     <Property Name="DIEM_DANHGIA" Type="tinyint" />
-    <Property Name="THOIGIAN_DANG" Type="datetime" />
+    <Property Name="THOIGIAN_DANG" Type="varchar" MaxLength="20" />
     <Property Name="NOIDUNG" Type="text" />
   </EntityType>
   <EntityType Name="HINHANHKHUYENMAI">
@@ -73,6 +88,16 @@
     <Property Name="ID_KHUYENMAI" Type="int" />
     <Property Name="HINHANH" Type="varchar(max)" />
   </EntityType>
+  <EntityType Name="HOADON">
+    <Key>
+      <PropertyRef Name="ID_HOADON" />
+    </Key>
+    <Property Name="ID_HOADON" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_TTKH" Type="int" />
+    <Property Name="ID_TRANGTHAI" Type="int" />
+    <Property Name="TONGTIEN" Type="float" />
+    <Property Name="ID_DONHANG" Type="int" />
+  </EntityType>
   <EntityType Name="KHUYENMAI">
     <Key>
       <PropertyRef Name="ID_KHUYENMAI" />
@@ -81,8 +106,8 @@
     <Property Name="ID_LOAITK" Type="int" />
     <Property Name="ID_DIEUKIEN" Type="int" />
     <Property Name="TEN_KHUYENMAI" Type="nvarchar" MaxLength="255" />
-    <Property Name="THOIGIAN_BATDAU" Type="datetime" />
-    <Property Name="THOIGIAN_KETTHUC" Type="datetime" />
+    <Property Name="THOIGIAN_BATDAU" Type="varchar" MaxLength="20" />
+    <Property Name="THOIGIAN_KETTHUC" Type="varchar" MaxLength="20" />
   </EntityType>
   <EntityType Name="LOAITAIKHOAN">
     <Key>
@@ -113,7 +138,7 @@
     <Property Name="ID_SACH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TEN_SACH" Type="nvarchar" MaxLength="255" />
     <Property Name="LOAI_BIA" Type="nvarchar" MaxLength="100" />
-    <Property Name="NGAY_XUATBAN" Type="date" />
+    <Property Name="NGAY_XUATBAN" Type="varchar" MaxLength="20" />
     <Property Name="SOLUONG_TON" Type="smallint" />
     <Property Name="SO_TRANG" Type="smallint" />
     <Property Name="KICH_THUOC" Type="varchar" MaxLength="20" />
@@ -123,7 +148,8 @@
     <Property Name="ID_NCC" Type="int" />
     <Property Name="ID_THELOAI" Type="int" />
     <Property Name="KHOILUONG" Type="float" />
-    <Property Name="ID_BANGGIA" Type="int" />
+    <Property Name="GIA_BIA" Type="float" />
+    <Property Name="GIA_BAN" Type="float" />
   </EntityType>
   <EntityType Name="SANPHAMKHUYENMAI">
     <Key>
@@ -131,8 +157,6 @@
     </Key>
     <Property Name="ID_SPKM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ID_SACH" Type="int" />
-    <Property Name="ID_BANGGIA" Type="int" />
-    <Property Name="GIA_GOC" Type="float" />
     <Property Name="GIA_BAN" Type="float" />
     <Property Name="SOLUONG" Type="smallint" />
     <Property Name="ID_KHUYENMAI" Type="int" />
@@ -151,7 +175,7 @@
     <Property Name="ID_KHACHHANG" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TEN_DANGNHAP" Type="nvarchar" MaxLength="100" />
     <Property Name="MATKHAU" Type="nvarchar" MaxLength="100" />
-    <Property Name="ANH_DAIDIEN" Type="image" />
+    <Property Name="ANH_DAIDIEN" Type="varchar(max)" />
     <Property Name="ID_LOAITK" Type="int" />
     <Property Name="ID_TTKH" Type="int" />
   </EntityType>
@@ -161,7 +185,7 @@
     </Key>
     <Property Name="ID_TKNH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TEN_NGANHANG" Type="nvarchar" MaxLength="200" />
-    <Property Name="MA_BIN" Type="int" />
+    <Property Name="MA_PIN" Type="int" />
   </EntityType>
   <EntityType Name="TAIKHOANQUANTRIVIEN">
     <Key>
@@ -171,7 +195,7 @@
     <Property Name="TEN_DANGNHAP" Type="nvarchar" MaxLength="100" />
     <Property Name="MATKHAU" Type="nvarchar" MaxLength="100" />
     <Property Name="TEN_QUANTRIVIEN" Type="nvarchar" MaxLength="255" />
-    <Property Name="ANH_DAIDIEN" Type="image" />
+    <Property Name="ANH_DAIDIEN" Type="varchar(max)" />
   </EntityType>
   <EntityType Name="THELOAI">
     <Key>
@@ -188,7 +212,7 @@
     <Property Name="TEN_KHACHHANG" Type="nvarchar" MaxLength="255" />
     <Property Name="EMAIL_KHACHHANG" Type="nvarchar" MaxLength="255" />
     <Property Name="DIACHI" Type="text" />
-    <Property Name="SO_DIENTHOAI" Type="nchar" MaxLength="20" />
+    <Property Name="SO_DIENTHOAI" Type="varchar" MaxLength="20" />
     <Property Name="TONG_TIEUDUNG" Type="float" />
   </EntityType>
   <EntityType Name="TRANGTHAIDONHANG">
@@ -222,15 +246,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_CHITIETDONHANG_BANGGIA">
-    <End Role="BANGGIA" Type="Self.BANGGIA" Multiplicity="0..1" />
-    <End Role="CHITIETDONHANG" Type="Self.CHITIETDONHANG" Multiplicity="*" />
+  <Association Name="FK_BANGGIA_SACH">
+    <End Role="SACH" Type="Self.SACH" Multiplicity="0..1" />
+    <End Role="BANGGIA" Type="Self.BANGGIA" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="BANGGIA">
-        <PropertyRef Name="ID_BANGGIA" />
+      <Principal Role="SACH">
+        <PropertyRef Name="ID_SACH" />
       </Principal>
-      <Dependent Role="CHITIETDONHANG">
-        <PropertyRef Name="ID_BANGGIA" />
+      <Dependent Role="BANGGIA">
+        <PropertyRef Name="ID_SACH" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -266,6 +290,42 @@
         <PropertyRef Name="ID_SPKM" />
       </Principal>
       <Dependent Role="CHITIETDONHANG">
+        <PropertyRef Name="ID_SPKM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTHD_HOADON">
+    <End Role="HOADON" Type="Self.HOADON" Multiplicity="0..1" />
+    <End Role="CHITIETHOADON" Type="Self.CHITIETHOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HOADON">
+        <PropertyRef Name="ID_HOADON" />
+      </Principal>
+      <Dependent Role="CHITIETHOADON">
+        <PropertyRef Name="ID_HOADON" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTHD_SACH">
+    <End Role="SACH" Type="Self.SACH" Multiplicity="0..1" />
+    <End Role="CHITIETHOADON" Type="Self.CHITIETHOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SACH">
+        <PropertyRef Name="ID_SACH" />
+      </Principal>
+      <Dependent Role="CHITIETHOADON">
+        <PropertyRef Name="ID_SACH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTHD_SANPHAMKHUYENMAI">
+    <End Role="SANPHAMKHUYENMAI" Type="Self.SANPHAMKHUYENMAI" Multiplicity="0..1" />
+    <End Role="CHITIETHOADON" Type="Self.CHITIETHOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SANPHAMKHUYENMAI">
+        <PropertyRef Name="ID_SPKM" />
+      </Principal>
+      <Dependent Role="CHITIETHOADON">
         <PropertyRef Name="ID_SPKM" />
       </Dependent>
     </ReferentialConstraint>
@@ -318,6 +378,42 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_HOADON_DONHANG">
+    <End Role="DONHANG" Type="Self.DONHANG" Multiplicity="0..1" />
+    <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DONHANG">
+        <PropertyRef Name="ID_DONHANG" />
+      </Principal>
+      <Dependent Role="HOADON">
+        <PropertyRef Name="ID_DONHANG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HOADON_TRANGTHAI">
+    <End Role="TRANGTHAIDONHANG" Type="Self.TRANGTHAIDONHANG" Multiplicity="0..1" />
+    <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TRANGTHAIDONHANG">
+        <PropertyRef Name="ID_TRANGTHAI" />
+      </Principal>
+      <Dependent Role="HOADON">
+        <PropertyRef Name="ID_TRANGTHAI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HOADON_TTKH">
+    <End Role="THONGTINKHACHHANG" Type="Self.THONGTINKHACHHANG" Multiplicity="0..1" />
+    <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="THONGTINKHACHHANG">
+        <PropertyRef Name="ID_TTKH" />
+      </Principal>
+      <Dependent Role="HOADON">
+        <PropertyRef Name="ID_TTKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_KHUYENMAI_DIEUKIEN">
     <End Role="DIEUKIENKHUYENMAI" Type="Self.DIEUKIENKHUYENMAI" Multiplicity="0..1" />
     <End Role="KHUYENMAI" Type="Self.KHUYENMAI" Multiplicity="*" />
@@ -339,18 +435,6 @@
       </Principal>
       <Dependent Role="KHUYENMAI">
         <PropertyRef Name="ID_LOAITK" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_SACH_BANGGIA">
-    <End Role="BANGGIA" Type="Self.BANGGIA" Multiplicity="0..1" />
-    <End Role="SACH" Type="Self.SACH" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="BANGGIA">
-        <PropertyRef Name="ID_BANGGIA" />
-      </Principal>
-      <Dependent Role="SACH">
-        <PropertyRef Name="ID_BANGGIA" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -438,15 +522,17 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="BookshopModelStoreContainer">
+  <EntityContainer Name="BOOKSHOPModelStoreContainer">
     <EntitySet Name="ANHBIA" EntityType="Self.ANHBIA" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ANHFEEDBACK" EntityType="Self.ANHFEEDBACK" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="BANGGIA" EntityType="Self.BANGGIA" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CHITIETDONHANG" EntityType="Self.CHITIETDONHANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CHITIETHOADON" EntityType="Self.CHITIETHOADON" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DIEUKIENKHUYENMAI" EntityType="Self.DIEUKIENKHUYENMAI" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DONHANG" EntityType="Self.DONHANG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FEEDBACK" EntityType="Self.FEEDBACK" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HINHANHKHUYENMAI" EntityType="Self.HINHANHKHUYENMAI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HOADON" EntityType="Self.HOADON" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="KHUYENMAI" EntityType="Self.KHUYENMAI" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LOAITAIKHOAN" EntityType="Self.LOAITAIKHOAN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NHACUNGCAP" EntityType="Self.NHACUNGCAP" Schema="dbo" store:Type="Tables" />
@@ -468,9 +554,9 @@
       <End Role="FEEDBACK" EntitySet="FEEDBACK" />
       <End Role="ANHFEEDBACK" EntitySet="ANHFEEDBACK" />
     </AssociationSet>
-    <AssociationSet Name="FK_CHITIETDONHANG_BANGGIA" Association="Self.FK_CHITIETDONHANG_BANGGIA">
+    <AssociationSet Name="FK_BANGGIA_SACH" Association="Self.FK_BANGGIA_SACH">
+      <End Role="SACH" EntitySet="SACH" />
       <End Role="BANGGIA" EntitySet="BANGGIA" />
-      <End Role="CHITIETDONHANG" EntitySet="CHITIETDONHANG" />
     </AssociationSet>
     <AssociationSet Name="FK_CTDH_DONHANG" Association="Self.FK_CTDH_DONHANG">
       <End Role="DONHANG" EntitySet="DONHANG" />
@@ -483,6 +569,18 @@
     <AssociationSet Name="FK_CTDH_SANPHAMKHUYENMAI" Association="Self.FK_CTDH_SANPHAMKHUYENMAI">
       <End Role="SANPHAMKHUYENMAI" EntitySet="SANPHAMKHUYENMAI" />
       <End Role="CHITIETDONHANG" EntitySet="CHITIETDONHANG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTHD_HOADON" Association="Self.FK_CTHD_HOADON">
+      <End Role="HOADON" EntitySet="HOADON" />
+      <End Role="CHITIETHOADON" EntitySet="CHITIETHOADON" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTHD_SACH" Association="Self.FK_CTHD_SACH">
+      <End Role="SACH" EntitySet="SACH" />
+      <End Role="CHITIETHOADON" EntitySet="CHITIETHOADON" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTHD_SANPHAMKHUYENMAI" Association="Self.FK_CTHD_SANPHAMKHUYENMAI">
+      <End Role="SANPHAMKHUYENMAI" EntitySet="SANPHAMKHUYENMAI" />
+      <End Role="CHITIETHOADON" EntitySet="CHITIETHOADON" />
     </AssociationSet>
     <AssociationSet Name="FK_DONHANG_TRANGTHAI" Association="Self.FK_DONHANG_TRANGTHAI">
       <End Role="TRANGTHAIDONHANG" EntitySet="TRANGTHAIDONHANG" />
@@ -500,6 +598,18 @@
       <End Role="KHUYENMAI" EntitySet="KHUYENMAI" />
       <End Role="HINHANHKHUYENMAI" EntitySet="HINHANHKHUYENMAI" />
     </AssociationSet>
+    <AssociationSet Name="FK_HOADON_DONHANG" Association="Self.FK_HOADON_DONHANG">
+      <End Role="DONHANG" EntitySet="DONHANG" />
+      <End Role="HOADON" EntitySet="HOADON" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HOADON_TRANGTHAI" Association="Self.FK_HOADON_TRANGTHAI">
+      <End Role="TRANGTHAIDONHANG" EntitySet="TRANGTHAIDONHANG" />
+      <End Role="HOADON" EntitySet="HOADON" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HOADON_TTKH" Association="Self.FK_HOADON_TTKH">
+      <End Role="THONGTINKHACHHANG" EntitySet="THONGTINKHACHHANG" />
+      <End Role="HOADON" EntitySet="HOADON" />
+    </AssociationSet>
     <AssociationSet Name="FK_KHUYENMAI_DIEUKIEN" Association="Self.FK_KHUYENMAI_DIEUKIEN">
       <End Role="DIEUKIENKHUYENMAI" EntitySet="DIEUKIENKHUYENMAI" />
       <End Role="KHUYENMAI" EntitySet="KHUYENMAI" />
@@ -507,10 +617,6 @@
     <AssociationSet Name="FK_KHUYENMAI_LOAITK" Association="Self.FK_KHUYENMAI_LOAITK">
       <End Role="LOAITAIKHOAN" EntitySet="LOAITAIKHOAN" />
       <End Role="KHUYENMAI" EntitySet="KHUYENMAI" />
-    </AssociationSet>
-    <AssociationSet Name="FK_SACH_BANGGIA" Association="Self.FK_SACH_BANGGIA">
-      <End Role="BANGGIA" EntitySet="BANGGIA" />
-      <End Role="SACH" EntitySet="SACH" />
     </AssociationSet>
     <AssociationSet Name="FK_SACH_NCC" Association="Self.FK_SACH_NCC">
       <End Role="NHACUNGCAP" EntitySet="NHACUNGCAP" />

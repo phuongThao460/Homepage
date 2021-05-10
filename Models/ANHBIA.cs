@@ -17,6 +17,7 @@ namespace Homepage.Models
 
     public partial class ANHBIA
     {
+        
         [Display(Name = "Mã ảnh")]
         public int ID_ANH { get; set; }
 
@@ -29,5 +30,13 @@ namespace Homepage.Models
         public virtual SACH SACH { get; set; }
         [NotMapped]
         public HttpPostedFileBase ImageFile { get; set; }
+        public ANHBIA(int id)
+        {
+            this.ID_SACH = id;
+        }
+        public ANHBIA()
+        {
+
+        }
     }
 }

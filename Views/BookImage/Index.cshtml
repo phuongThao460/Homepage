@@ -9,14 +9,12 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <H2>Thêm ảnh</H2>
-    
+    <h2>Thêm ảnh</h2>
+
+    <script src="~/Content/Scripts/AddImage.js"></script>
 </head>
 <body>
-    <p>
-
-        @Html.ActionLink("Thêm ảnh","UploadImages", new { controller = "BookImage", action = "Index", id = ViewBag.Id })
-    </p>
+    @Html.Partial("UploadImages",new Homepage.Models.ANHBIA(), new ViewDataDictionary { { "id", ViewBag.id } })
     <table class="table">
         <tr>
             <th>

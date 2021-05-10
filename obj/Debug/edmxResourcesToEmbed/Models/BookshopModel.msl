@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="BookshopModelStoreContainer" CdmEntityContainer="BookshopEntity">
+  <EntityContainerMapping StorageEntityContainer="BOOKSHOPModelStoreContainer" CdmEntityContainer="BOOKSHOPEntities">
     <EntitySetMapping Name="ANHBIAs">
-      <EntityTypeMapping TypeName="BookshopModel.ANHBIA">
+      <EntityTypeMapping TypeName="BOOKSHOPModel.ANHBIA">
         <MappingFragment StoreEntitySet="ANHBIA">
           <ScalarProperty Name="ID_ANH" ColumnName="ID_ANH" />
           <ScalarProperty Name="ID_SACH" ColumnName="ID_SACH" />
@@ -11,7 +11,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ANHFEEDBACKs">
-      <EntityTypeMapping TypeName="BookshopModel.ANHFEEDBACK">
+      <EntityTypeMapping TypeName="BOOKSHOPModel.ANHFEEDBACK">
         <MappingFragment StoreEntitySet="ANHFEEDBACK">
           <ScalarProperty Name="ID_ANH" ColumnName="ID_ANH" />
           <ScalarProperty Name="ID_FEEDBACK" ColumnName="ID_FEEDBACK" />
@@ -20,29 +20,44 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="BANGGIAs">
-      <EntityTypeMapping TypeName="BookshopModel.BANGGIA">
+      <EntityTypeMapping TypeName="BOOKSHOPModel.BANGGIA">
         <MappingFragment StoreEntitySet="BANGGIA">
           <ScalarProperty Name="ID_BANGGIA" ColumnName="ID_BANGGIA" />
-          <ScalarProperty Name="GIA_NHAP" ColumnName="GIA_NHAP" />
-          <ScalarProperty Name="GIA_BAN" ColumnName="GIA_BAN" />
-          <ScalarProperty Name="GIA_BIA" ColumnName="GIA_BIA" />
+          <ScalarProperty Name="ID_SACH" ColumnName="ID_SACH" />
+          <ScalarProperty Name="NGAY_APDUNG" ColumnName="NGAY_APDUNG" />
+          <ScalarProperty Name="TANG_GIAM" ColumnName="TANG_GIAM" />
+          <ScalarProperty Name="GIATRI" ColumnName="GIATRI" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="CHITIETDONHANGs">
-      <EntityTypeMapping TypeName="BookshopModel.CHITIETDONHANG">
+      <EntityTypeMapping TypeName="BOOKSHOPModel.CHITIETDONHANG">
         <MappingFragment StoreEntitySet="CHITIETDONHANG">
           <ScalarProperty Name="ID_CTDH" ColumnName="ID_CTDH" />
           <ScalarProperty Name="ID_DONHANG" ColumnName="ID_DONHANG" />
           <ScalarProperty Name="ID_SACH" ColumnName="ID_SACH" />
-          <ScalarProperty Name="ID_BANGGIA" ColumnName="ID_BANGGIA" />
           <ScalarProperty Name="ID_SPKM" ColumnName="ID_SPKM" />
+          <ScalarProperty Name="GIA_BAN" ColumnName="GIA_BAN" />
           <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
+          <ScalarProperty Name="TONGTIEN" ColumnName="TONGTIEN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CHITIETHOADONs">
+      <EntityTypeMapping TypeName="BOOKSHOPModel.CHITIETHOADON">
+        <MappingFragment StoreEntitySet="CHITIETHOADON">
+          <ScalarProperty Name="ID_CTHD" ColumnName="ID_CTHD" />
+          <ScalarProperty Name="ID_HOADON" ColumnName="ID_HOADON" />
+          <ScalarProperty Name="ID_SACH" ColumnName="ID_SACH" />
+          <ScalarProperty Name="ID_SPKM" ColumnName="ID_SPKM" />
+          <ScalarProperty Name="GIA_BAN" ColumnName="GIA_BAN" />
+          <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
+          <ScalarProperty Name="TONGTIEN" ColumnName="TONGTIEN" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="DIEUKIENKHUYENMAIs">
-      <EntityTypeMapping TypeName="BookshopModel.DIEUKIENKHUYENMAI">
+      <EntityTypeMapping TypeName="BOOKSHOPModel.DIEUKIENKHUYENMAI">
         <MappingFragment StoreEntitySet="DIEUKIENKHUYENMAI">
           <ScalarProperty Name="ID_DIEUKIEN" ColumnName="ID_DIEUKIEN" />
           <ScalarProperty Name="THOIGIAN_BATDAU" ColumnName="THOIGIAN_BATDAU" />
@@ -52,17 +67,18 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="DONHANGs">
-      <EntityTypeMapping TypeName="BookshopModel.DONHANG">
+      <EntityTypeMapping TypeName="BOOKSHOPModel.DONHANG">
         <MappingFragment StoreEntitySet="DONHANG">
           <ScalarProperty Name="ID_DONHANG" ColumnName="ID_DONHANG" />
           <ScalarProperty Name="ID_TTKH" ColumnName="ID_TTKH" />
           <ScalarProperty Name="ID_TRANGTHAI" ColumnName="ID_TRANGTHAI" />
+          <ScalarProperty Name="TONGTIEN" ColumnName="TONGTIEN" />
           <ScalarProperty Name="THOIGIAN_DAT" ColumnName="THOIGIAN_DAT" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="FEEDBACKs">
-      <EntityTypeMapping TypeName="BookshopModel.FEEDBACK">
+      <EntityTypeMapping TypeName="BOOKSHOPModel.FEEDBACK">
         <MappingFragment StoreEntitySet="FEEDBACK">
           <ScalarProperty Name="ID_FEEDBACK" ColumnName="ID_FEEDBACK" />
           <ScalarProperty Name="ID_SACH" ColumnName="ID_SACH" />
@@ -74,7 +90,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="HINHANHKHUYENMAIs">
-      <EntityTypeMapping TypeName="BookshopModel.HINHANHKHUYENMAI">
+      <EntityTypeMapping TypeName="BOOKSHOPModel.HINHANHKHUYENMAI">
         <MappingFragment StoreEntitySet="HINHANHKHUYENMAI">
           <ScalarProperty Name="ID_HINHANH" ColumnName="ID_HINHANH" />
           <ScalarProperty Name="ID_KHUYENMAI" ColumnName="ID_KHUYENMAI" />
@@ -82,8 +98,19 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="HOADONs">
+      <EntityTypeMapping TypeName="BOOKSHOPModel.HOADON">
+        <MappingFragment StoreEntitySet="HOADON">
+          <ScalarProperty Name="ID_HOADON" ColumnName="ID_HOADON" />
+          <ScalarProperty Name="ID_TTKH" ColumnName="ID_TTKH" />
+          <ScalarProperty Name="ID_TRANGTHAI" ColumnName="ID_TRANGTHAI" />
+          <ScalarProperty Name="TONGTIEN" ColumnName="TONGTIEN" />
+          <ScalarProperty Name="ID_DONHANG" ColumnName="ID_DONHANG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="KHUYENMAIs">
-      <EntityTypeMapping TypeName="BookshopModel.KHUYENMAI">
+      <EntityTypeMapping TypeName="BOOKSHOPModel.KHUYENMAI">
         <MappingFragment StoreEntitySet="KHUYENMAI">
           <ScalarProperty Name="ID_KHUYENMAI" ColumnName="ID_KHUYENMAI" />
           <ScalarProperty Name="ID_LOAITK" ColumnName="ID_LOAITK" />
@@ -95,7 +122,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="LOAITAIKHOANs">
-      <EntityTypeMapping TypeName="BookshopModel.LOAITAIKHOAN">
+      <EntityTypeMapping TypeName="BOOKSHOPModel.LOAITAIKHOAN">
         <MappingFragment StoreEntitySet="LOAITAIKHOAN">
           <ScalarProperty Name="ID_LOAITK" ColumnName="ID_LOAITK" />
           <ScalarProperty Name="TEN_LOAITK" ColumnName="TEN_LOAITK" />
@@ -104,7 +131,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="NHACUNGCAPs">
-      <EntityTypeMapping TypeName="BookshopModel.NHACUNGCAP">
+      <EntityTypeMapping TypeName="BOOKSHOPModel.NHACUNGCAP">
         <MappingFragment StoreEntitySet="NHACUNGCAP">
           <ScalarProperty Name="ID_NCC" ColumnName="ID_NCC" />
           <ScalarProperty Name="TEN_NHACUNGCAP" ColumnName="TEN_NHACUNGCAP" />
@@ -112,7 +139,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="NHAXUATBANs">
-      <EntityTypeMapping TypeName="BookshopModel.NHAXUATBAN">
+      <EntityTypeMapping TypeName="BOOKSHOPModel.NHAXUATBAN">
         <MappingFragment StoreEntitySet="NHAXUATBAN">
           <ScalarProperty Name="ID_NXB" ColumnName="ID_NXB" />
           <ScalarProperty Name="TEN_NHAXUATBAN" ColumnName="TEN_NHAXUATBAN" />
@@ -120,7 +147,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="SACHes">
-      <EntityTypeMapping TypeName="BookshopModel.SACH">
+      <EntityTypeMapping TypeName="BOOKSHOPModel.SACH">
         <MappingFragment StoreEntitySet="SACH">
           <ScalarProperty Name="ID_SACH" ColumnName="ID_SACH" />
           <ScalarProperty Name="TEN_SACH" ColumnName="TEN_SACH" />
@@ -135,17 +162,16 @@
           <ScalarProperty Name="ID_NCC" ColumnName="ID_NCC" />
           <ScalarProperty Name="ID_THELOAI" ColumnName="ID_THELOAI" />
           <ScalarProperty Name="KHOILUONG" ColumnName="KHOILUONG" />
-          <ScalarProperty Name="ID_BANGGIA" ColumnName="ID_BANGGIA" />
+          <ScalarProperty Name="GIA_BIA" ColumnName="GIA_BIA" />
+          <ScalarProperty Name="GIA_BAN" ColumnName="GIA_BAN" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="SANPHAMKHUYENMAIs">
-      <EntityTypeMapping TypeName="BookshopModel.SANPHAMKHUYENMAI">
+      <EntityTypeMapping TypeName="BOOKSHOPModel.SANPHAMKHUYENMAI">
         <MappingFragment StoreEntitySet="SANPHAMKHUYENMAI">
           <ScalarProperty Name="ID_SPKM" ColumnName="ID_SPKM" />
           <ScalarProperty Name="ID_SACH" ColumnName="ID_SACH" />
-          <ScalarProperty Name="ID_BANGGIA" ColumnName="ID_BANGGIA" />
-          <ScalarProperty Name="GIA_GOC" ColumnName="GIA_GOC" />
           <ScalarProperty Name="GIA_BAN" ColumnName="GIA_BAN" />
           <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
           <ScalarProperty Name="ID_KHUYENMAI" ColumnName="ID_KHUYENMAI" />
@@ -153,7 +179,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TACGIAs">
-      <EntityTypeMapping TypeName="BookshopModel.TACGIA">
+      <EntityTypeMapping TypeName="BOOKSHOPModel.TACGIA">
         <MappingFragment StoreEntitySet="TACGIA">
           <ScalarProperty Name="ID_TACGIA" ColumnName="ID_TACGIA" />
           <ScalarProperty Name="TEN_TACGIA" ColumnName="TEN_TACGIA" />
@@ -161,7 +187,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TAIKHOANKHACHHANGs">
-      <EntityTypeMapping TypeName="BookshopModel.TAIKHOANKHACHHANG">
+      <EntityTypeMapping TypeName="BOOKSHOPModel.TAIKHOANKHACHHANG">
         <MappingFragment StoreEntitySet="TAIKHOANKHACHHANG">
           <ScalarProperty Name="ID_KHACHHANG" ColumnName="ID_KHACHHANG" />
           <ScalarProperty Name="TEN_DANGNHAP" ColumnName="TEN_DANGNHAP" />
@@ -173,16 +199,16 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TAIKHOANNGANHANGs">
-      <EntityTypeMapping TypeName="BookshopModel.TAIKHOANNGANHANG">
+      <EntityTypeMapping TypeName="BOOKSHOPModel.TAIKHOANNGANHANG">
         <MappingFragment StoreEntitySet="TAIKHOANNGANHANG">
           <ScalarProperty Name="ID_TKNH" ColumnName="ID_TKNH" />
           <ScalarProperty Name="TEN_NGANHANG" ColumnName="TEN_NGANHANG" />
-          <ScalarProperty Name="MA_BIN" ColumnName="MA_BIN" />
+          <ScalarProperty Name="MA_PIN" ColumnName="MA_PIN" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TAIKHOANQUANTRIVIENs">
-      <EntityTypeMapping TypeName="BookshopModel.TAIKHOANQUANTRIVIEN">
+      <EntityTypeMapping TypeName="BOOKSHOPModel.TAIKHOANQUANTRIVIEN">
         <MappingFragment StoreEntitySet="TAIKHOANQUANTRIVIEN">
           <ScalarProperty Name="ID_QUANTRIVIEN" ColumnName="ID_QUANTRIVIEN" />
           <ScalarProperty Name="TEN_DANGNHAP" ColumnName="TEN_DANGNHAP" />
@@ -193,7 +219,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="THELOAIs">
-      <EntityTypeMapping TypeName="BookshopModel.THELOAI">
+      <EntityTypeMapping TypeName="BOOKSHOPModel.THELOAI">
         <MappingFragment StoreEntitySet="THELOAI">
           <ScalarProperty Name="ID_THELOAI" ColumnName="ID_THELOAI" />
           <ScalarProperty Name="TEN_THELOAI" ColumnName="TEN_THELOAI" />
@@ -201,7 +227,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="THONGTINKHACHHANGs">
-      <EntityTypeMapping TypeName="BookshopModel.THONGTINKHACHHANG">
+      <EntityTypeMapping TypeName="BOOKSHOPModel.THONGTINKHACHHANG">
         <MappingFragment StoreEntitySet="THONGTINKHACHHANG">
           <ScalarProperty Name="ID_TTKH" ColumnName="ID_TTKH" />
           <ScalarProperty Name="TEN_KHACHHANG" ColumnName="TEN_KHACHHANG" />
@@ -213,7 +239,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TRANGTHAIDONHANGs">
-      <EntityTypeMapping TypeName="BookshopModel.TRANGTHAIDONHANG">
+      <EntityTypeMapping TypeName="BOOKSHOPModel.TRANGTHAIDONHANG">
         <MappingFragment StoreEntitySet="TRANGTHAIDONHANG">
           <ScalarProperty Name="ID_TRANGTHAI" ColumnName="ID_TRANGTHAI" />
           <ScalarProperty Name="TEN_TRANGTHAI" ColumnName="TEN_TRANGTHAI" />
