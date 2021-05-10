@@ -17,11 +17,11 @@ namespace Homepage.Models
         public int ID_CTDH { get; set; }
         public Nullable<int> ID_DONHANG { get; set; }
         public Nullable<int> ID_SACH { get; set; }
-        public Nullable<int> ID_BANGGIA { get; set; }
         public Nullable<int> ID_SPKM { get; set; }
+        public Nullable<double> GIA_BAN { get; set; }
         public Nullable<short> SOLUONG { get; set; }
+        public Nullable<double> TONGTIEN { get; set; }
     
-        public virtual BANGGIA BANGGIA { get; set; }
         public virtual DONHANG DONHANG { get; set; }
         public virtual SACH SACH { get; set; }
         public virtual SANPHAMKHUYENMAI SANPHAMKHUYENMAI { get; set; }

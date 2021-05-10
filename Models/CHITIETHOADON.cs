@@ -12,14 +12,18 @@ namespace Homepage.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class BANGGIA
+    public partial class CHITIETHOADON
     {
-        public int ID_BANGGIA { get; set; }
+        public int ID_CTHD { get; set; }
+        public Nullable<int> ID_HOADON { get; set; }
         public Nullable<int> ID_SACH { get; set; }
-        public string NGAY_APDUNG { get; set; }
-        public Nullable<bool> TANG_GIAM { get; set; }
-        public Nullable<double> GIATRI { get; set; }
+        public Nullable<int> ID_SPKM { get; set; }
+        public Nullable<double> GIA_BAN { get; set; }
+        public Nullable<short> SOLUONG { get; set; }
+        public Nullable<double> TONGTIEN { get; set; }
     
+        public virtual HOADON HOADON { get; set; }
         public virtual SACH SACH { get; set; }
+        public virtual SANPHAMKHUYENMAI SANPHAMKHUYENMAI { get; set; }
     }
 }

@@ -17,7 +17,7 @@ namespace Homepage.Models
         public int ID_KHACHHANG { get; set; }
         public string TEN_DANGNHAP { get; set; }
         public string MATKHAU { get; set; }
-        public byte[] ANH_DAIDIEN { get; set; }
+        public string ANH_DAIDIEN { get; set; }
         public Nullable<int> ID_LOAITK { get; set; }
         public Nullable<int> ID_TTKH { get; set; }
     

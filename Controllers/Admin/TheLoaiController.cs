@@ -9,7 +9,7 @@ namespace Homepage.Controllers
 {
     public class TheLoaiController : Controller
     {
-        BookshopEntity db  = new BookshopEntity();
+        BOOKSHOPEntities db  = new BOOKSHOPEntities();
         public ActionResult Index()
         {
             return View(db.THELOAIs.ToList());

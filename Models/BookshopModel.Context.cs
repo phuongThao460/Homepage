@@ -13,10 +13,10 @@ namespace Homepage.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class BookshopEntity : DbContext
+    public partial class BOOKSHOPEntities : DbContext
     {
-        public BookshopEntity()
-            : base("name=BookshopEntity")
+        public BOOKSHOPEntities()
+            : base("name=BOOKSHOPEntities")
         {
         }
     
@@ -29,10 +29,12 @@ namespace Homepage.Models
         public virtual DbSet<ANHFEEDBACK> ANHFEEDBACKs { get; set; }
         public virtual DbSet<BANGGIA> BANGGIAs { get; set; }
         public virtual DbSet<CHITIETDONHANG> CHITIETDONHANGs { get; set; }
+        public virtual DbSet<CHITIETHOADON> CHITIETHOADONs { get; set; }
         public virtual DbSet<DIEUKIENKHUYENMAI> DIEUKIENKHUYENMAIs { get; set; }
         public virtual DbSet<DONHANG> DONHANGs { get; set; }
         public virtual DbSet<FEEDBACK> FEEDBACKs { get; set; }
         public virtual DbSet<HINHANHKHUYENMAI> HINHANHKHUYENMAIs { get; set; }
+        public virtual DbSet<HOADON> HOADONs { get; set; }
         public virtual DbSet<KHUYENMAI> KHUYENMAIs { get; set; }
         public virtual DbSet<LOAITAIKHOAN> LOAITAIKHOANs { get; set; }
         public virtual DbSet<NHACUNGCAP> NHACUNGCAPs { get; set; }

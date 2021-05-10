@@ -9,7 +9,7 @@ namespace Homepage.Controllers
 {
     public class uHomeController : Controller
     {
-        BookshopEntity db = new BookshopEntity();
+        BOOKSHOPEntities db = new BOOKSHOPEntities();
         public ActionResult Index()
         {
             return View(db.SACHes.ToList()); //no bao thieu cham phay cho nao kia

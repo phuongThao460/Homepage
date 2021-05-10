@@ -130,18 +130,18 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\BookImageController.cs" />
-    <Compile Include="Controllers\BooksController.cs" />
-    <Compile Include="Controllers\ChiTietSanPhamController.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
-    <Compile Include="Controllers\NhaCungCapController.cs" />
-    <Compile Include="Controllers\NhaXuatBanController.cs" />
-    <Compile Include="Controllers\OrderController.cs" />
-    <Compile Include="Controllers\OrderStateController.cs" />
-    <Compile Include="Controllers\ShoppingCartController.cs" />
-    <Compile Include="Controllers\TacGiaController.cs" />
-    <Compile Include="Controllers\TheLoaiController.cs" />
-    <Compile Include="Controllers\uHomeController.cs" />
+    <Compile Include="Controllers\Admin\BookImageController.cs" />
+    <Compile Include="Controllers\Admin\BooksController.cs" />
+    <Compile Include="Controllers\Customer\ChiTietSanPhamController.cs" />
+    <Compile Include="Controllers\Admin\LoginController.cs" />
+    <Compile Include="Controllers\Admin\NhaCungCapController.cs" />
+    <Compile Include="Controllers\Admin\NhaXuatBanController.cs" />
+    <Compile Include="Controllers\Admin\OrderController.cs" />
+    <Compile Include="Controllers\Admin\OrderStateController.cs" />
+    <Compile Include="Controllers\Customer\ShoppingCartController.cs" />
+    <Compile Include="Controllers\Admin\TacGiaController.cs" />
+    <Compile Include="Controllers\Admin\TheLoaiController.cs" />
+    <Compile Include="Controllers\Customer\uHomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -173,6 +173,9 @@
     <Compile Include="Models\CHITIETDONHANG.cs">
       <DependentUpon>BookshopModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CHITIETHOADON.cs">
+      <DependentUpon>BookshopModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\DIEUKIENKHUYENMAI.cs">
       <DependentUpon>BookshopModel.tt</DependentUpon>
     </Compile>
@@ -183,6 +186,9 @@
       <DependentUpon>BookshopModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HINHANHKHUYENMAI.cs">
+      <DependentUpon>BookshopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HOADON.cs">
       <DependentUpon>BookshopModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\KHUYENMAI.cs">
@@ -3557,13 +3563,6 @@
     <Content Include="lib\bootstrap\js\bootstrap.bundle.min.js.map" />
     <Content Include="lib\bootstrap\js\bootstrap.js.map" />
     <Content Include="lib\bootstrap\js\bootstrap.min.js.map" />
-    <EntityDeploy Include="Models\BookshopModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>BookshopModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\BookshopModel.edmx.diagram">
-      <DependentUpon>BookshopModel.edmx</DependentUpon>
-    </Content>
     <Content Include="Content\bower.json" />
     <Content Include="Content\knob.jquery.json" />
     <Content Include="Content\LICENSE" />
@@ -3813,6 +3812,13 @@
     <Content Include="Content\dist\css\adminlte.min.css.map" />
     <Content Include="Content\dist\img\.DS_Store" />
     <Content Include="Content\dist\js\.DS_Store" />
+    <EntityDeploy Include="Models\BookshopModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BookshopModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\BookshopModel.edmx.diagram">
+      <DependentUpon>BookshopModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

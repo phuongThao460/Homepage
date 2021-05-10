@@ -9,7 +9,7 @@ namespace Homepage.Controllers
 {
     public class OrderController : Controller
     {
-        BookshopEntity db = new BookshopEntity();
+        BOOKSHOPEntities db = new BOOKSHOPEntities();
         // GET: Order
         public RedirectToRouteResult Index()
         {

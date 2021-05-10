@@ -18,6 +18,7 @@ namespace Homepage.Models
         public TRANGTHAIDONHANG()
         {
             this.DONHANGs = new HashSet<DONHANG>();
+            this.HOADONs = new HashSet<HOADON>();
         }
     
         public int ID_TRANGTHAI { get; set; }
@@ -25,5 +26,7 @@ namespace Homepage.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DONHANG> DONHANGs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HOADON> HOADONs { get; set; }
     }
 }

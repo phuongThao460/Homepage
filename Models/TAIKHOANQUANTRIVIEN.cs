@@ -18,6 +18,6 @@ namespace Homepage.Models
         public string TEN_DANGNHAP { get; set; }
         public string MATKHAU { get; set; }
         public string TEN_QUANTRIVIEN { get; set; }
-        public byte[] ANH_DAIDIEN { get; set; }
+        public string ANH_DAIDIEN { get; set; }
     }
 }
