@@ -54,9 +54,10 @@ namespace Homepage.Controllers
         [HttpPost]
         public ActionResult Edit(NHAXUATBAN nxb)
         {
+            int id = int.Parse(Url.RequestContext.RouteData.Values["id"].ToString());
             try
             {
-                NHAXUATBAN d = db.NHAXUATBANs.Where(s => s.ID_NXB == nxb.ID_NXB).FirstOrDefault();
+                NHAXUATBAN d = db.NHAXUATBANs.Where(s => s.ID_NXB == id).FirstOrDefault();
                 d.TEN_NHAXUATBAN = nxb.TEN_NHAXUATBAN;
                 db.SaveChanges();
                 return RedirectToAction("Index", "NhaXuatBan");

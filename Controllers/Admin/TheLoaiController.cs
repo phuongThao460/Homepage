@@ -51,11 +51,12 @@ namespace Homepage.Controllers
 
         // POST: TheLoai/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, THELOAI tl)
+        public ActionResult Edit(THELOAI tl)
         {
+            int id = int.Parse(Url.RequestContext.RouteData.Values["id"].ToString());
             try
             {
-                THELOAI d = db.THELOAIs.Where(s => s.ID_THELOAI == tl.ID_THELOAI).FirstOrDefault();
+                THELOAI d = db.THELOAIs.Where(s => s.ID_THELOAI == id).FirstOrDefault();
                 d.TEN_THELOAI = tl.TEN_THELOAI;
                 db.SaveChanges();
                 return RedirectToAction("Index", "TheLoai");

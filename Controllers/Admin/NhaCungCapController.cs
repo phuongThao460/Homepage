@@ -48,16 +48,17 @@ namespace Homepage.Controllers
         // GET: NhaCungCap/Edit/5
         public ActionResult Edit(int id)
         {
-            return View(db.NHACUNGCAPs.Where(s => s.ID_NCC == id).First());
+            return View(db.NHACUNGCAPs.Where(s => s.ID_NCC == id).FirstOrDefault());
         }
 
         // POST: NhaCungCap/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, NHACUNGCAP ncc)
+        public ActionResult Edit(NHACUNGCAP ncc)
         {
+            int id = int.Parse(Url.RequestContext.RouteData.Values["id"].ToString());
             try
             {
-                NHACUNGCAP d = db.NHACUNGCAPs.Where(s => s.ID_NCC == ncc.ID_NCC).First();
+                NHACUNGCAP d = db.NHACUNGCAPs.Where(s => s.ID_NCC == id).FirstOrDefault();
                 d.TEN_NHACUNGCAP = ncc.TEN_NHACUNGCAP;
                 db.SaveChanges();
                 return RedirectToAction("Index", "NhaXuatBan");

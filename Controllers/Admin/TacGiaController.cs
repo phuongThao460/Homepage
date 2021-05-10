@@ -60,9 +60,10 @@ namespace Homepage.Controllers
         [HttpPost]
         public ActionResult Edit(TACGIA tg)
         {
+            int id = int.Parse(Url.RequestContext.RouteData.Values["id"].ToString());
             try
             {
-                TACGIA d = db.TACGIAs.Where(s => s.ID_TACGIA == tg.ID_TACGIA).FirstOrDefault();
+                TACGIA d = db.TACGIAs.Where(s => s.ID_TACGIA == id).FirstOrDefault();
                 d.TEN_TACGIA = tg.TEN_TACGIA;
                 db.SaveChanges();
                 return RedirectToAction("Index", "TacGia");
