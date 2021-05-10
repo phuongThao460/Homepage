@@ -39,7 +39,7 @@ namespace Homepage.Models
         }
         public decimal Total_money()
         {
-            var total = items.Sum(s => s._quantity * s._sach.BANGGIA.GIA_BAN);
+            var total = items.Sum(s => s._quantity * s._sach.GIA_BAN);
             return (decimal)total;
         }
         public void Update_quantity(int id, int _new_quan)

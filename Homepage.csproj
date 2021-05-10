@@ -130,8 +130,6 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
     <Compile Include="Controllers\Admin\BookImageController.cs" />
     <Compile Include="Controllers\Admin\BooksController.cs" />
     <Compile Include="Controllers\Customer\ChiTietSanPhamController.cs" />
@@ -144,24 +142,6 @@
     <Compile Include="Controllers\Admin\TacGiaController.cs" />
     <Compile Include="Controllers\Admin\TheLoaiController.cs" />
     <Compile Include="Controllers\Customer\uHomeController.cs" />
-=======
-=======
->>>>>>> Stashed changes
-    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
-    <Compile Include="Areas\User\UserAreaRegistration.cs" />
-    <Compile Include="Controllers\BookImageController.cs" />
-    <Compile Include="Controllers\BooksController.cs" />
-    <Compile Include="Controllers\ChiTietSanPhamController.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
-    <Compile Include="Controllers\NhaCungCapController.cs" />
-    <Compile Include="Controllers\NhaXuatBanController.cs" />
-    <Compile Include="Controllers\OrderController.cs" />
-    <Compile Include="Controllers\OrderStateController.cs" />
-    <Compile Include="Controllers\ShoppingCartController.cs" />
-    <Compile Include="Controllers\TacGiaController.cs" />
-    <Compile Include="Controllers\TheLoaiController.cs" />
-    <Compile Include="Controllers\uHomeController.cs" />
->>>>>>> Stashed changes
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -3832,8 +3812,6 @@
     <Content Include="Content\dist\css\adminlte.min.css.map" />
     <Content Include="Content\dist\img\.DS_Store" />
     <Content Include="Content\dist\js\.DS_Store" />
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
     <EntityDeploy Include="Models\BookshopModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>BookshopModel.Designer.cs</LastGenOutput>
@@ -3841,14 +3819,8 @@
     <Content Include="Models\BookshopModel.edmx.diagram">
       <DependentUpon>BookshopModel.edmx</DependentUpon>
     </Content>
-=======
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\User\Views\web.config" />
->>>>>>> Stashed changes
-=======
-    <Content Include="Areas\Admin\Views\web.config" />
-    <Content Include="Areas\User\Views\web.config" />
->>>>>>> Stashed changes
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
