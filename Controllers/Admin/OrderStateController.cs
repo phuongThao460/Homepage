@@ -31,5 +31,9 @@ namespace Homepage.Controllers
             db.SaveChanges();
             return RedirectToRoute(new { controller = "OrderState", action = "DanhSachTrangThai" });
         }
+        public ActionResult Details(int id)
+        {
+            return View(db.TRANGTHAIDONHANGs.Where(tt => tt.ID_TRANGTHAI == id).FirstOrDefault());
+        }
     }
 }

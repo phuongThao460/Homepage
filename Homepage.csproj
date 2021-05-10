@@ -130,8 +130,12 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\Admin\AdminAccountController.cs" />
     <Compile Include="Controllers\Admin\BookImageController.cs" />
     <Compile Include="Controllers\Admin\BooksController.cs" />
+    <Compile Include="Controllers\Admin\CustomerAccountController.cs" />
+    <Compile Include="Controllers\Admin\CustomerInfoController.cs" />
+    <Compile Include="Controllers\Admin\FeedbackController.cs" />
     <Compile Include="Controllers\Admin\ManualPriceController.cs" />
     <Compile Include="Controllers\Customer\ChiTietSanPhamController.cs" />
     <Compile Include="Controllers\Admin\LoginController.cs" />
@@ -3887,6 +3891,11 @@
     <Content Include="Views\NhaXuatBan\Details.cshtml" />
     <Content Include="Views\TheLoai\Details.cshtml" />
     <Content Include="Views\ManualPrice\Index.cshtml" />
+    <Content Include="Views\OrderState\Details.cshtml" />
+    <Content Include="Views\CustomerInfo\Index.cshtml" />
+    <Content Include="Views\Feedback\Index.cshtml" />
+    <Content Include="Views\CustomerAccount\Index.cshtml" />
+    <Content Include="Views\AdminAccount\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
