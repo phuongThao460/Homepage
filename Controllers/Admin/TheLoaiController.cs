@@ -18,7 +18,7 @@ namespace Homepage.Controllers
         // GET: TheLoai/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            return View(db.THELOAIs.Where(tl => tl.ID_THELOAI == id).FirstOrDefault());
         }
 
         // GET: TheLoai/Create
@@ -46,7 +46,7 @@ namespace Homepage.Controllers
         // GET: TheLoai/Edit/5
         public ActionResult Edit(int id)
         {
-            return View(db.THELOAIs.Where(s => s.ID_THELOAI == id).First());
+            return View(db.THELOAIs.Where(s => s.ID_THELOAI == id).FirstOrDefault());
         }
 
         // POST: TheLoai/Edit/5
@@ -55,7 +55,7 @@ namespace Homepage.Controllers
         {
             try
             {
-                THELOAI d = db.THELOAIs.Where(s => s.ID_THELOAI == tl.ID_THELOAI).First();
+                THELOAI d = db.THELOAIs.Where(s => s.ID_THELOAI == tl.ID_THELOAI).FirstOrDefault();
                 d.TEN_THELOAI = tl.TEN_THELOAI;
                 db.SaveChanges();
                 return RedirectToAction("Index", "TheLoai");
@@ -66,26 +66,5 @@ namespace Homepage.Controllers
             }
         }
 
-        // GET: TheLoai/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: TheLoai/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }

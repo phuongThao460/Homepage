@@ -19,7 +19,8 @@ namespace Homepage.Controllers
         // GET: NhaCungCap/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var check = db.NHACUNGCAPs.Where(ncc => ncc.ID_NCC == id).FirstOrDefault();
+            return View(check);
         }
 
         // GET: NhaCungCap/Create
@@ -67,26 +68,5 @@ namespace Homepage.Controllers
             }
         }
 
-        // GET: NhaCungCap/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: NhaCungCap/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }

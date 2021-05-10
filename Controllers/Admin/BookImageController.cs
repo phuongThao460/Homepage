@@ -24,14 +24,14 @@ namespace Homepage.Controllers
         }
 
         [HttpGet]
-        public PartialViewResult UploadImages()
+        public ActionResult UploadImages()
         {
-            return PartialView();
+            return View();
         }
         [HttpPost]
         public RedirectToRouteResult UploadImages(ANHBIA anhBia)
         {
-            url = int.Parse(anhBia.ID_SACH.ToString());
+            url = int.Parse(Url.RequestContext.RouteData.Values["id"].ToString());
             if (anhBia.ImageFile != null)
             {
                 string fileName = Path.GetFileNameWithoutExtension(anhBia.ImageFile.FileName);

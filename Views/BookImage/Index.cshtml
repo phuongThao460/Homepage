@@ -14,7 +14,10 @@
     <script src="~/Content/Scripts/AddImage.js"></script>
 </head>
 <body>
-    @Html.Partial("UploadImages",new Homepage.Models.ANHBIA(), new ViewDataDictionary { { "id", ViewBag.id } })
+    <p>
+
+        @Html.ActionLink("Thêm ảnh", "UploadImages", new { controller = "BookImage", action = "Index", id = ViewBag.Id })
+    </p>
     <table class="table">
         <tr>
             <th>
