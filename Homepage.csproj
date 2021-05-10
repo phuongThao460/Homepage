@@ -132,6 +132,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\Admin\BookImageController.cs" />
     <Compile Include="Controllers\Admin\BooksController.cs" />
+    <Compile Include="Controllers\Admin\ManualPriceController.cs" />
     <Compile Include="Controllers\Customer\ChiTietSanPhamController.cs" />
     <Compile Include="Controllers\Admin\LoginController.cs" />
     <Compile Include="Controllers\Admin\NhaCungCapController.cs" />
@@ -3885,6 +3886,7 @@
     <Content Include="Views\NhaCungCap\Details.cshtml" />
     <Content Include="Views\NhaXuatBan\Details.cshtml" />
     <Content Include="Views\TheLoai\Details.cshtml" />
+    <Content Include="Views\ManualPrice\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
