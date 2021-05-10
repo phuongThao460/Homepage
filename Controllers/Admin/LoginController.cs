@@ -9,7 +9,7 @@ namespace Homepage.Controllers
 {
     public class LoginController : Controller
     {
-        BookshopEntity db = new BookshopEntity();
+        BOOKSHOPEntities db = new BOOKSHOPEntities();
         // GET: Login
         [HttpGet]
         public ActionResult Index()

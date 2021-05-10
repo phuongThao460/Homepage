@@ -24,7 +24,7 @@ namespace Homepage.Models
         public Nullable<int> ID_SACH { get; set; }
         public Nullable<bool> XACNHAN_MUAHANG { get; set; }
         public Nullable<byte> DIEM_DANHGIA { get; set; }
-        public Nullable<System.DateTime> THOIGIAN_DANG { get; set; }
+        public string THOIGIAN_DANG { get; set; }
         public string NOIDUNG { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

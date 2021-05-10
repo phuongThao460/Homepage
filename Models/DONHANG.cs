@@ -18,16 +18,20 @@ namespace Homepage.Models
         public DONHANG()
         {
             this.CHITIETDONHANGs = new HashSet<CHITIETDONHANG>();
+            this.HOADONs = new HashSet<HOADON>();
         }
     
         public int ID_DONHANG { get; set; }
         public Nullable<int> ID_TTKH { get; set; }
         public Nullable<int> ID_TRANGTHAI { get; set; }
-        public Nullable<System.DateTime> THOIGIAN_DAT { get; set; }
+        public Nullable<double> TONGTIEN { get; set; }
+        public string THOIGIAN_DAT { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CHITIETDONHANG> CHITIETDONHANGs { get; set; }
         public virtual TRANGTHAIDONHANG TRANGTHAIDONHANG { get; set; }
         public virtual THONGTINKHACHHANG THONGTINKHACHHANG { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HOADON> HOADONs { get; set; }
     }
 }

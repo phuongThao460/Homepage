@@ -9,7 +9,7 @@ namespace Homepage.Controllers
 {
     public class ShoppingCartController : Controller
     {
-        BookshopEntity database = new BookshopEntity();
+        BOOKSHOPEntities database = new BOOKSHOPEntities();
         // GET: ShoppingCart
         public ActionResult ShowCart()
         {

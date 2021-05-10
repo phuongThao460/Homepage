@@ -7,34 +7,57 @@ using Homepage.Models;
 
 namespace Homepage.Controllers
 {
-    public class NhaXuatBanController : Controller
+    public class NhaCungCapController : Controller
     {
-        BookshopEntity db = new BookshopEntity();
-        // GET: NhaXuatBan
+        BOOKSHOPEntities db = new BOOKSHOPEntities();
+        // GET: NhaCungCap
         public ActionResult Index()
         {
-            return View(db.NHAXUATBANs.ToList());
+            return View(db.NHACUNGCAPs.ToList());
         }
 
-        // GET: NhaXuatBan/Details/5
+        // GET: NhaCungCap/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: NhaXuatBan/Create
+        // GET: NhaCungCap/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: NhaXuatBan/Create
+        // POST: NhaCungCap/Create
         [HttpPost]
-        public ActionResult Create(NHAXUATBAN nxb)
+        public ActionResult Create(NHACUNGCAP ncc)
         {
             try
             {
-                db.NHAXUATBANs.Add(nxb);
+                db.NHACUNGCAPs.Add(ncc);
+                db.SaveChanges();
+                return RedirectToAction("Index", "NhaCungCap");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        // GET: NhaCungCap/Edit/5
+        public ActionResult Edit(int id)
+        {
+            return View(db.NHACUNGCAPs.Where(s => s.ID_NCC == id).First());
+        }
+
+        // POST: NhaCungCap/Edit/5
+        [HttpPost]
+        public ActionResult Edit(int id, NHACUNGCAP ncc)
+        {
+            try
+            {
+                NHACUNGCAP d = db.NHACUNGCAPs.Where(s => s.ID_NCC == ncc.ID_NCC).First();
+                d.TEN_NHACUNGCAP = ncc.TEN_NHACUNGCAP;
                 db.SaveChanges();
                 return RedirectToAction("Index", "NhaXuatBan");
             }
@@ -44,36 +67,13 @@ namespace Homepage.Controllers
             }
         }
 
-        // GET: NhaXuatBan/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            return View(db.NHAXUATBANs.Where(s => s.ID_NXB == id).First());
-        }
-
-        // POST: NhaXuatBan/Edit/5
-        [HttpPost]
-        public ActionResult Edit(NHAXUATBAN nxb)
-        {
-            try
-            {
-                NHAXUATBAN d = db.NHAXUATBANs.Where(s => s.ID_NXB == nxb.ID_NXB).First();
-                d.TEN_NHAXUATBAN = nxb.TEN_NHAXUATBAN;
-                db.SaveChanges();
-                return RedirectToAction("Index", "NhaXuatBan");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: NhaXuatBan/Delete/5
+        // GET: NhaCungCap/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: NhaXuatBan/Delete/5
+        // POST: NhaCungCap/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

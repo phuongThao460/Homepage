@@ -18,6 +18,7 @@ namespace Homepage.Models
         public THONGTINKHACHHANG()
         {
             this.DONHANGs = new HashSet<DONHANG>();
+            this.HOADONs = new HashSet<HOADON>();
             this.TAIKHOANKHACHHANGs = new HashSet<TAIKHOANKHACHHANG>();
         }
     
@@ -30,6 +31,8 @@ namespace Homepage.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DONHANG> DONHANGs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HOADON> HOADONs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TAIKHOANKHACHHANG> TAIKHOANKHACHHANGs { get; set; }
     }

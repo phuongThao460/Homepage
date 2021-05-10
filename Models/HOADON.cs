@@ -12,20 +12,24 @@ namespace Homepage.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class DIEUKIENKHUYENMAI
+    public partial class HOADON
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public DIEUKIENKHUYENMAI()
+        public HOADON()
         {
-            this.KHUYENMAIs = new HashSet<KHUYENMAI>();
+            this.CHITIETHOADONs = new HashSet<CHITIETHOADON>();
         }
     
-        public int ID_DIEUKIEN { get; set; }
-        public string THOIGIAN_BATDAU { get; set; }
-        public string THOIGIAN_KETTHUC { get; set; }
-        public Nullable<double> MUC_TIEUDUNG { get; set; }
+        public int ID_HOADON { get; set; }
+        public Nullable<int> ID_TTKH { get; set; }
+        public Nullable<int> ID_TRANGTHAI { get; set; }
+        public Nullable<double> TONGTIEN { get; set; }
+        public Nullable<int> ID_DONHANG { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<KHUYENMAI> KHUYENMAIs { get; set; }
+        public virtual ICollection<CHITIETHOADON> CHITIETHOADONs { get; set; }
+        public virtual DONHANG DONHANG { get; set; }
+        public virtual TRANGTHAIDONHANG TRANGTHAIDONHANG { get; set; }
+        public virtual THONGTINKHACHHANG THONGTINKHACHHANG { get; set; }
     }
 }

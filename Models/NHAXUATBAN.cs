@@ -27,5 +27,4 @@ namespace Homepage.Models
         public virtual ICollection<SACH> SACHes { get; set; }
         public List<NHAXUATBAN> ListNXB { get; set; }
     }
-
 }

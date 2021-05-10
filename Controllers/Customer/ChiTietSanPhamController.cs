@@ -10,7 +10,7 @@ namespace Homepage.Controllers
 {
     public class ChiTietSanPhamController : Controller
     {
-        BookshopEntity database = new BookshopEntity();
+        BOOKSHOPEntities database = new BOOKSHOPEntities();
         // GET: ChiTietSanPham
         public ActionResult Index()
         {

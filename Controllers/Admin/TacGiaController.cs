@@ -9,7 +9,7 @@ namespace Homepage.Controllers
 {
     public class TacGiaController : Controller
     {
-        BookshopEntity db = new BookshopEntity();
+        BOOKSHOPEntities db = new BOOKSHOPEntities();
         // GET: TacGia
         public ActionResult Index()
         {

@@ -10,7 +10,7 @@ namespace Homepage.Controllers
 {
     public class BookImageController : Controller
     {
-        BookshopEntity db = new BookshopEntity();
+        BOOKSHOPEntities db = new BOOKSHOPEntities();
         int url;
         // GET: BookImage
 

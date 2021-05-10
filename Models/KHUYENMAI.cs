@@ -25,8 +25,8 @@ namespace Homepage.Models
         public Nullable<int> ID_LOAITK { get; set; }
         public Nullable<int> ID_DIEUKIEN { get; set; }
         public string TEN_KHUYENMAI { get; set; }
-        public Nullable<System.DateTime> THOIGIAN_BATDAU { get; set; }
-        public Nullable<System.DateTime> THOIGIAN_KETTHUC { get; set; }
+        public string THOIGIAN_BATDAU { get; set; }
+        public string THOIGIAN_KETTHUC { get; set; }
     
         public virtual DIEUKIENKHUYENMAI DIEUKIENKHUYENMAI { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

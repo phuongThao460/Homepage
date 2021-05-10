@@ -16,6 +16,6 @@ namespace Homepage.Models
     {
         public int ID_TKNH { get; set; }
         public string TEN_NGANHANG { get; set; }
-        public Nullable<int> MA_BIN { get; set; }
+        public Nullable<int> MA_PIN { get; set; }
     }
 }

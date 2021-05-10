@@ -18,18 +18,19 @@ namespace Homepage.Models
         public SANPHAMKHUYENMAI()
         {
             this.CHITIETDONHANGs = new HashSet<CHITIETDONHANG>();
+            this.CHITIETHOADONs = new HashSet<CHITIETHOADON>();
         }
     
         public int ID_SPKM { get; set; }
         public Nullable<int> ID_SACH { get; set; }
-        public Nullable<int> ID_BANGGIA { get; set; }
-        public Nullable<double> GIA_GOC { get; set; }
         public Nullable<double> GIA_BAN { get; set; }
         public Nullable<short> SOLUONG { get; set; }
         public Nullable<int> ID_KHUYENMAI { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CHITIETDONHANG> CHITIETDONHANGs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CHITIETHOADON> CHITIETHOADONs { get; set; }
         public virtual KHUYENMAI KHUYENMAI { get; set; }
     }
 }
