@@ -3852,7 +3852,6 @@
     <Content Include="Views\uHome\Index.cshtml" />
     <Content Include="Views\Shared\_homepageLayout.cshtml" />
     <Content Include="Views\uHome\GetNameTG.cshtml" />
-    <Content Include="Views\uHome\GetPrice.cshtml" />
     <Content Include="Views\BookImage\Edit.cshtml" />
     <Content Include="Views\BookImage\Index.cshtml" />
     <Content Include="Views\BookImage\UploadImages.cshtml" />

@@ -22,12 +22,6 @@ namespace Homepage.Controllers
             return PartialView(tacgia);
         }
 
-        public ActionResult GetPrice()
-        {
-            int id = int.Parse(Url.RequestContext.RouteData.Values["id"].ToString());
-            var gia = db.BANGGIAs.Where(bg => bg.ID_BANGGIA == id).FirstOrDefault();
-            return PartialView(gia);
-        }
         public ActionResult Details(int id)
         {
             return View(db.SACHes.Where(s => s.ID_SACH == id).FirstOrDefault());

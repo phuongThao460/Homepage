@@ -88,5 +88,59 @@ namespace Homepage.Controllers.Admin
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult AutoUpdate()
+        {
+            foreach(var item in db.BANGGIAs.ToList())
+            {
+                if (HetHan(item))
+                {
+                    var check = db.SACHes.Where(s => s.ID_SACH == item.ID_SACH).FirstOrDefault();
+                    if (item.TANG_GIAM)
+                    {
+                        check.GIA_BAN += item.GIATRI;
+                    }
+                    else
+                    {
+                        check.GIA_BAN -= item.GIATRI;
+                    }
+                    db.BANGGIAs.Remove(item);
+                    db.SaveChanges();
+                }
+            }
+            return RedirectToAction("Index");
+        }
+        public bool HetHan(BANGGIA bg)
+        {
+            int ngay = int.Parse(bg.NGAY_APDUNG.Substring(0, 2));
+            // 20/12/2021
+            int thang = int.Parse(bg.NGAY_APDUNG.Substring(3, 2));
+            int nam = int.Parse(bg.NGAY_APDUNG.Substring(6, 4));
+            DateTime current = DateTime.Now;
+            if(current.Year > nam)
+            {
+                return true;
+            }
+            else if (current.Year < nam)
+            {
+                return false;
+            }
+            if (current.Month > thang)
+            {
+                return true;
+            }
+            else if (current.Month < thang)
+            {
+                return false;
+            }
+            if (current.Day > ngay)
+            {
+                return true;
+            }
+            else if (current.Day < ngay)
+            {
+                return false;
+            }
+            return false;
+        }
     }
 }
