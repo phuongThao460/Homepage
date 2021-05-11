@@ -131,6 +131,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\Admin\AdminAccountController.cs" />
+    <Compile Include="Controllers\Admin\AutoPriceController.cs" />
+    <Compile Include="Controllers\Admin\BillController.cs" />
     <Compile Include="Controllers\Admin\BookImageController.cs" />
     <Compile Include="Controllers\Admin\BooksController.cs" />
     <Compile Include="Controllers\Admin\CustomerAccountController.cs" />
@@ -3896,6 +3898,17 @@
     <Content Include="Views\Feedback\Index.cshtml" />
     <Content Include="Views\CustomerAccount\Index.cshtml" />
     <Content Include="Views\AdminAccount\Index.cshtml" />
+    <Content Include="Views\ManualPrice\UpdatePrice.cshtml" />
+    <Content Include="Views\AutoPrice\Index.cshtml" />
+    <Content Include="Views\AutoPrice\Create.cshtml" />
+    <Content Include="Views\AutoPrice\SelectSach.cshtml" />
+    <Content Include="Views\AutoPrice\Edit.cshtml" />
+    <Content Include="Views\CustomerInfo\Create.cshtml" />
+    <Content Include="Views\CustomerInfo\Edit.cshtml" />
+    <Content Include="Views\Bill\Index.cshtml" />
+    <Content Include="Views\Bill\Create.cshtml" />
+    <Content Include="Views\Bill\SelectOrder.cshtml" />
+    <Content Include="Views\Bill\SelectState.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

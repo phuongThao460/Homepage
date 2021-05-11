@@ -15,8 +15,13 @@ namespace Homepage.Controllers.Admin
         {
             return View(db.SACHes.ToList());
         }
+        [HttpGet]
+        public PartialViewResult UpdatePrice()
+        {
+            return PartialView();
+        }
         [HttpPost]
-        public ActionResult UpdatePrice(SACH newPrice)
+        public RedirectToRouteResult UpdatePrice(SACH newPrice)
         {
             if(newPrice.GIA_BAN < 0)
             {

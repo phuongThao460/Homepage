@@ -2,14 +2,11 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_homepageLayout.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Cập nhật giá - Thủ công</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
@@ -28,27 +25,7 @@
     </tr>
 
 @foreach (var item in Model) {
-<tr>
-    @using (Html.BeginForm("UpdatePrice", "ManualPrice", FormMethod.Post, new { enctype = "multipart/form-data" }))
-    {
-        <td>
-            @Html.DisplayFor(modelItem => item.ID_SACH)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TEN_SACH)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GIA_BIA)
-        </td>
-
-        <td>
-            @Html.TextBoxFor(modelItem => item.GIA_BAN)
-        </td>
-        <td>
-            <input type="submit" value="Update" />
-        </td>
-    }
-</tr>
+    @Html.Partial("UpdatePrice",item)
 }
 
 </table>

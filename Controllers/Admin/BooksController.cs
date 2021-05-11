@@ -53,6 +53,7 @@ namespace Homepage.Controllers
         public RedirectToRouteResult Edit(SACH sach)
         {
             int id = int.Parse(Url.RequestContext.RouteData.Values["id"].ToString());
+
             return RedirectToRoute(new { controller = "Books", action = "Details", id = id });
         }
 
